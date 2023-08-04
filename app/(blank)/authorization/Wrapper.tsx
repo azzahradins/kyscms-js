@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { AuthNavigateContext } from '../../../context/authorization/navigate'
+import { AuthNavigateContext } from '../../../hooks/authorization/navigate'
 
 function Wrapper (): JSX.Element {
   const { page } = React.useContext(AuthNavigateContext)

@@ -1,7 +1,7 @@
 'use client'
 import React, { type ReactElement } from 'react'
 
-import AuthProvider from '../../../context/authorization/navigate'
+import AuthProvider from '../../../hooks/authorization/navigate'
 import Wrapper from './Wrapper'
 
 export default function Authorization (): ReactElement {

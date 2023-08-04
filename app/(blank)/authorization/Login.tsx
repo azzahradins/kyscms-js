@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-import { AuthNavigateContext } from '../../../context/authorization/navigate'
+import { AuthNavigateContext } from '../../../hooks/authorization/navigate'
 import { Form, InputField, Button } from '@/components/Forms'
 
 const validationSchema = z.object({
