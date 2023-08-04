@@ -6,12 +6,12 @@ interface Props {
   variant?: 'primary' | 'secondary' | 'disabled'
 }
 
-function Button ({
+export const Button = ({
   type,
   text,
   onClick = () => {},
   variant = 'primary'
-}: Props): React.FunctionComponentElement<Props> {
+}: Props): React.FunctionComponentElement<Props> => {
   return (
     <button
       className={`btn-${variant}`}
@@ -19,5 +19,3 @@ function Button ({
       type={type}>{text}</button>
   )
 }
-
-export default Button

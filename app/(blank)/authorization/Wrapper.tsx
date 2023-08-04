@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { AuthNavigateContext } from '../../../context/authorization/navigate'
 
 function Wrapper (): JSX.Element {

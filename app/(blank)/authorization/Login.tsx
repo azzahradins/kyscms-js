@@ -1,13 +1,10 @@
+import React from 'react'
 import { useForm } from 'react-hook-form'
-
-import Button from '../../../components/Buttons'
-import { Form } from '../../../components/Form'
-import { InputField } from '../../../components/InputField'
-
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import React from 'react'
+
 import { AuthNavigateContext } from '../../../context/authorization/navigate'
+import { Form, InputField, Button } from '@/components/Forms'
 
 const validationSchema = z.object({
   email: z.string().min(1, { message: 'Email is required' }).email({

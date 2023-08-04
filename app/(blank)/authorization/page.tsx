@@ -1,6 +1,6 @@
 'use client'
-
 import React, { type ReactElement } from 'react'
+
 import AuthProvider from '../../../context/authorization/navigate'
 import Wrapper from './Wrapper'
 

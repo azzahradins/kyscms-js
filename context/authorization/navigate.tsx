@@ -1,5 +1,5 @@
-import Login from '@/(blank)/authorization/Login'
-import Register from '@/(blank)/authorization/Register'
+import Login from '@/app/(blank)/authorization/Login'
+import Register from '@/app/(blank)/authorization/Register'
 import React, { useContext } from 'react'
 
 interface authNavigateType {
