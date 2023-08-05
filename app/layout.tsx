@@ -3,6 +3,10 @@ import '../assets/styles/satoshi.css'
 
 import { Providers } from './providers'
 
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
+
 export const metadata = {
   title: 'Structuring NextJS',
   description: 'Structuring NextJS'
