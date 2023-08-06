@@ -35,7 +35,7 @@ export default function Login (): JSX.Element {
         <span>You don&apos;t have account?
           <button
             onClick={() => { setPage('register') }}
-            className='mx-1 text-purple-300'>
+            className='mx-1 text-purple-800 dark:text-purple-300'>
             Register
           </button>
         </span>

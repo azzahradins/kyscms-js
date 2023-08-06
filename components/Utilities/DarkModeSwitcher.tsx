@@ -11,7 +11,7 @@ const DarkModeSwitcher = (): JSX.Element => {
       <input
         type="checkbox"
         onChange={() => { currentTheme === 'dark' ? setTheme('light') : setTheme('dark') }}
-        className="dur absolute top-0 h-full z-50 m-0 cursor-pointer opacity-0"
+        className="dur absolute top-0 h-12 w-6 z-50 m-0 cursor-pointer opacity-0"
       />
       { currentTheme === 'dark'
         ? <FontAwesomeIcon icon={faSun} className={'fa-xl'} />

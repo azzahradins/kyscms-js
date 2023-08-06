@@ -28,7 +28,9 @@ export default function Register (): JSX.Element {
   })
 
   const submitRegister = (data: any): void => {
-    console.log(data)
+    if (data !== null) {
+      setPage('verification', data)
+    }
   }
 
   return (
@@ -41,7 +43,7 @@ export default function Register (): JSX.Element {
           Do you have an account?
           <button
             onClick={() => { setPage('login') }}
-            className='mx-1 text-purple-300'>
+            className='mx-1 text-purple-800 dark:text-purple-300'>
             Login
           </button>
         </span>

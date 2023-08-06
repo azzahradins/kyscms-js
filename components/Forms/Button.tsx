@@ -4,17 +4,19 @@ interface Props {
   text: string
   onClick?: (e: any) => void
   variant?: 'primary' | 'secondary' | 'disabled'
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 }
 
 export const Button = ({
   type,
   text,
   onClick = () => {},
-  variant = 'primary'
+  variant = 'primary',
+  size = 'md'
 }: Props): React.FunctionComponentElement<Props> => {
   return (
     <button
-      className={`btn-${variant}`}
+      className={`btn-${variant} btn-${size}`}
       onClick={onClick}
       type={type}>{text}</button>
   )

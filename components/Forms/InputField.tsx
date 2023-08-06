@@ -19,7 +19,6 @@ export const InputField: FC<IInputProps> =
       {
         name,
         label,
-        error = { message: '', type: '', ref: '' },
         type = 'text',
         size = 'medium',
         className = '',
@@ -29,7 +28,7 @@ export const InputField: FC<IInputProps> =
         ...props
       }, ref
     ) => {
-      const { register } = useFormContext()
+      const { register, formState: { errors } } = useFormContext()
 
       return <div key={name} className={className}>
         <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{label}</label>
@@ -43,7 +42,7 @@ export const InputField: FC<IInputProps> =
           placeholder={placeholder ?? label}
           {...register(name)}
           {...props}/>
-        <label>{error.message}</label>
+        <label className='text-sm text-danger'>{ errors[name]?.message }</label>
       </div>
     }
   )
