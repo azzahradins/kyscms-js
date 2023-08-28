@@ -1,6 +1,5 @@
-import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useTheme } from 'next-themes'
+import { FaMoon, FaSun } from 'react-icons/fa'
 
 const DarkModeSwitcher = (): JSX.Element => {
   const { systemTheme, theme, setTheme } = useTheme()
@@ -14,8 +13,8 @@ const DarkModeSwitcher = (): JSX.Element => {
         className="dur absolute top-0 h-12 w-6 z-50 m-0 cursor-pointer opacity-0"
       />
       { currentTheme === 'dark'
-        ? <FontAwesomeIcon icon={faSun} className={'fa-xl'} />
-        : <FontAwesomeIcon icon={faMoon} className={`fa-xl ${theme === 'dark' ? 'hidden' : 'visible'}`}/>
+        ? <FaSun className={'fa-xl'} />
+        : <FaMoon className={`fa-xl ${theme === 'dark' ? 'hidden' : 'visible'}`}/>
       }
 
     </div>
