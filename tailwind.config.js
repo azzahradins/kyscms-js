@@ -16,15 +16,14 @@ module.exports = {
     colors: {
       current: 'currentColor',
       transparent: 'transparent',
-      background: {
-        light: {
-          1: '#DDDDDD',
-          2: '#CFCFCF'
-        },
-        dark: {
-          1: '#20262E',
-          2: '#2c323b'
-        }
+      light: {
+        1: '#DDDDDD',
+        2: '#CFCFCF',
+        3: '#f4f4f5'
+      },
+      dark: {
+        1: '#20262E',
+        2: '#2c323b'
       },
       primary: '#7e57c2',
       white: '#FFFFFF',

@@ -6,7 +6,7 @@ function Navbar (): React.ReactElement {
   const { isOpenOnSmallScreens, isPageWithSidebar, setOpenOnSmallScreens } = useSidebarContext()
 
   return <header className="sticky top-0 lg:hidden">
-  <Nv fluid rounded className='bg-background-light-1'>
+  <Nv fluid rounded className='bg-light-1'>
     {isPageWithSidebar && (
       <button
         aria-controls="sidebar"

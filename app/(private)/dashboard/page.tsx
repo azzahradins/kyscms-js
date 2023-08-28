@@ -1,12 +1,20 @@
 'use client'
-import { Card } from 'flowbite-react'
+import Card from '@/component/Page/Card'
 import Image from 'next/image'
+import LineDataOptions from '../../../example-data/LineDataOptions.json'
+import { CategoryScale, Chart as ChartJS, Filler, Legend, LineElement, LinearScale, PointElement, Title, Tooltip } from 'chart.js'
+import { Line } from 'react-chartjs-2'
 
-export default function Dashboard (): JSX.Element {
+ChartJS.register(
+  CategoryScale, PointElement, LineElement, Filler, Title,
+  LinearScale, Tooltip, Legend
+)
+
+export default function Dashboard(): JSX.Element {
   return (
     <main>
       <div className='grid grid-cols-2 lg:grid-cols-3 gap-3 mb-3'>
-        <Card className="w-full">
+        <Card>
           <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             Monthly Visitor
           </h5>
@@ -14,21 +22,21 @@ export default function Dashboard (): JSX.Element {
             Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
           </p>
         </Card>
-        <Card className="w-full">
+        <Card>
           <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            Monthly Content Upload
+            Monthly Upload
           </h5>
           <p className="font-normal text-gray-700 dark:text-gray-400">
             Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
           </p>
         </Card>
-        <Card className="w-full hidden lg:block">
-            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Server Status
-            </h5>
-            <p className="font-normal text-gray-700 dark:text-gray-400">
-              Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-            </p>
+        <Card>
+          <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            Server Status
+          </h5>
+          <p className="font-normal text-gray-700 dark:text-gray-400">
+            Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+          </p>
         </Card>
       </div>
 
@@ -38,14 +46,8 @@ export default function Dashboard (): JSX.Element {
             <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">
               Latest Upload
             </h5>
-            <a
-              className="text-sm font-medium text-cyan-600 hover:underline dark:text-cyan-500"
-              href="#"
-            >
-              <p>
-                View all
-              </p>
-            </a>
+            <a className="text-sm font-medium text-cyan-600 hover:underline dark:text-cyan-500"
+              href="#"> View all </a>
           </div>
           <div className="flow-root">
             <ul className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -74,6 +76,16 @@ export default function Dashboard (): JSX.Element {
                 </div>
               </li>
             </ul>
+          </div>
+        </Card>
+        <Card>
+          <div className="mb-2 flex items-center justify-between">
+            <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">
+              Visit Performance Report
+            </h5>
+          </div>
+          <div className="flow-root h-36">
+            <Line data={LineDataOptions.data} className='relative' options={LineDataOptions.options} />
           </div>
         </Card>
       </div>

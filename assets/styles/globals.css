@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 :root {
-  @apply bg-background-light-1 overflow-x-hidden;
+  @apply bg-light-1 overflow-x-hidden;
 }
 
 html,
@@ -61,7 +61,7 @@ h3 {
 }
 
 .dark {
-  @apply bg-background-dark-1;
+  @apply bg-dark-1;
 }
 
 .spacing {
