@@ -6,7 +6,7 @@ import { FaGlobe } from 'react-icons/fa'
 import MangaListData from './MangaListData'
 
 const customTheme: CustomFlowbiteTheme['tab'] = {
-  tabpanel: 'wrapper',
+  tabpanel: 'hidden',
   tablist: {
     base: 'flex text-center px-4.5',
     tabitem: {
@@ -33,25 +33,11 @@ export default function MangaList (): React.ReactElement {
         <Tabs.Item
           active
           icon={FaGlobe}
-          title="Published">
-            <MangaListData />
-        </Tabs.Item>
+          title="Published"/>
       </Tabs.Group>
-
-      {/* <TabsComponent>
-        <Tabs.Item
-          key={'onGoing'}
-          title='On Going'
-          icon={<FaWalking/>}>
-            asdhfksfd
-        </Tabs.Item>
-        <Tabs.Item
-          key={'Published'}
-          title='Published'
-          icon={<FaGlobe/>}>
-            <p>published de</p>
-        </Tabs.Item>
-      </Tabs> */}
+      <div className='wrapper'>
+        <MangaListData />
+      </div>
     </main>
   )
 }

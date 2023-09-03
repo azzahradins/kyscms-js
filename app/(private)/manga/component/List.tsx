@@ -3,9 +3,9 @@ import { FaDatabase, FaRegNewspaper, FaUser } from 'react-icons/fa'
 
 function List (): React.ReactElement {
   return (
-    <div className='w-full border rounded-lg px-9 py-6 bg-gray-50 border-gray-200 dark:border-gray-600 shadow dark:shadow-inner mb-4'>
+    <div className='w-full border rounded-lg px-9 py-6 bg-gray-50 dark:bg-transparent border-gray-200 dark:border-gray-600 shadow dark:shadow-inner mb-4'>
       <Link href='manga/detail/slug'>
-        <h3 className="text-xl">#80149 - <span className="font-semibold text-bodydark3"> Absolute Necromancer </span> <span className="font-light text-sm"> (alt-title) </span> </h3>
+        <h3 className="text-xl">#80149 - <span className="font-semibold dark:text-bodydark1"> Absolute Necromancer </span> <span className="font-light text-sm"> (alt-title) </span> </h3>
       </Link>
       <div className="flex py-3 border-b gap-4 border-gray-200 dark:border-gray-500 pb-3 text-md font-semibold text-bodydark2">
         <span className="inline-flex">

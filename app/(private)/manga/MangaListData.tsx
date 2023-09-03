@@ -4,8 +4,14 @@ import List from '@/app/(private)/manga/component/List'
 import { useForm } from 'react-hook-form'
 
 import { Form, InputIcon } from '@/components/Forms'
-import { Button } from 'flowbite-react'
-import { FaFilter } from 'react-icons/fa'
+import { Button, type CustomFlowbiteTheme } from 'flowbite-react'
+import { FaFilter, FaPlus, FaSearchengin } from 'react-icons/fa'
+
+const customButton: CustomFlowbiteTheme['button'] = {
+  color: {
+    success: 'text-white bg-green-400 border border-transparent enabled:hover:bg-green-500 focus:ring-4 focus:ring-green-300 dark:bg-green-600 dark:enabled:hover:bg-green-700 dark:focus:ring-green-800'
+  }
+}
 
 export default function MangaListData (): React.ReactElement {
   return (
@@ -18,8 +24,14 @@ export default function MangaListData (): React.ReactElement {
           <Form methods={useForm()}>
             <InputIcon
               name='search'
+              icon={FaSearchengin}
               placeholder='Search Keyword'/>
           </Form>
+        </div>
+        <div>
+          <Button size="md" color="success" theme={customButton}>
+            <FaPlus className="mr-2 h-4 w-4 self-center"/> Create New Collection
+          </Button>
         </div>
       </div>
       <div>

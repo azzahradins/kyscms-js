@@ -1,12 +1,14 @@
 'use client'
 
-import { Label, TextInput } from 'flowbite-react'
-import { type FC, forwardRef } from 'react'
-import { HiMail } from 'react-icons/hi'
+import { type CustomFlowbiteTheme, Label, TextInput } from 'flowbite-react'
+import { type FC, forwardRef, FunctionComponent, SVGProps } from 'react'
+import { HiSearch } from 'react-icons/hi'
 import { useFormContext } from 'react-hook-form'
+import { FaSearchDollar } from 'react-icons/fa'
 
 interface IInputProps {
-  name: string
+  name: string,
+  icon: FunctionComponent<SVGProps<SVGSVGElement>>,
   label?: string
   type?: 'text' | 'number' | 'email' | 'password'
   size?: 'medium' | 'large'
@@ -17,11 +19,22 @@ interface IInputProps {
   error?: { message: string, type: string, ref: string }
 }
 
+const customForm: CustomFlowbiteTheme['textInput'] = {
+  field: {
+    input: {
+      colors: {
+        gray: 'bg-transparent border-gray-300 text-gray-900 dark:border-gray-600 dark:text-white dark:placeholder-gray-400'
+      }
+    }
+  }
+}
+
 export const InputIcon: FC<IInputProps> =
   forwardRef<HTMLInputElement, IInputProps>(
     (
       {
         name,
+        icon,
         label,
         type = 'text',
         size = 'medium',
@@ -43,12 +56,15 @@ export const InputIcon: FC<IInputProps> =
           />
         </div>}
         <TextInput
+          theme={customForm}
           id={name}
           required
           placeholder={placeholder}
           className={className}
-          rightIcon={HiMail}
-          type="email"
+          rightIcon={icon}
+          autoComplete='false'
+          autoCorrect='false'
+          enterKeyHint='search'
           {...register(name)}
           {...props}
         />
