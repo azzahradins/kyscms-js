@@ -12,7 +12,7 @@ ChartJS.register(
 
 export default function Dashboard (): JSX.Element {
   return (
-    <main>
+    <main className='wrapper'>
       <div className='grid grid-cols-2 lg:grid-cols-3 gap-3 mb-3'>
         <Card>
           <Card.Header>

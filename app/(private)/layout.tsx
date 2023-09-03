@@ -13,7 +13,7 @@ export default function RootLayout ({ children }: { children: React.ReactNode })
         </div>
         <div className='flex-auto'>
           <Navbar/>
-          <div className='m-2 my-2.5'>
+          <div>
             {children}
           </div>
         </div>

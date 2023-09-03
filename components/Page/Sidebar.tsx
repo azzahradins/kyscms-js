@@ -1,13 +1,24 @@
 import classNames from 'classnames'
-import { Sidebar as Sb } from 'flowbite-react'
+import { type CustomFlowbiteTheme, Sidebar as Sb } from 'flowbite-react'
 import { FaHome, FaUser, FaDoorClosed, FaServer, FaBook } from 'react-icons/fa'
 import { useSidebarContext } from '@/hooks/SidebarContext'
+import { usePathname } from 'next/navigation'
+import DarkModeSwitcher from '../Utilities/DarkModeSwitcher'
+
+const customSideBar: CustomFlowbiteTheme['sidebar'] = {
+  root: {
+    inner: 'h-full overflow-y-auto overflow-x-hidden bg-light-1 py-4 px-3 dark:bg-gray-800 border-r border-light-2 dark:border-dark-2 justify-between flex flex-col'
+  }
+}
 
 function Sidebar (): React.ReactElement {
   const { isOpenOnSmallScreens: isSidebarOpenOnSmallScreens } = useSidebarContext()
+  const router = usePathname().split('/')
+
   return (
-    <div>
+    <div className='h-full'>
       <Sb aria-label="Sidebar Default"
+          theme={customSideBar}
           className={classNames(
             'fixed overflow-auto top-0 h-screen z-[999] lg:sticky lg:!block',
             'transition-all duration-300 h-screen fixed',
@@ -19,21 +30,30 @@ function Sidebar (): React.ReactElement {
           <Sb.Items>
             <Sb.ItemGroup>
               <Sb.Item
-                href="#"
+                className={classNames(
+                  { 'bg-gray-200': router[1] === 'dashboard' }
+                )}
+                href="/dashboard"
+                active={router[1] === 'dashboard'}
                 icon={FaHome}>
                 Dashboard
               </Sb.Item>
               <Sb.Collapse
                 icon={FaBook}
                 label="Manga">
-                <Sb.Item href="#">
-                  List
+                <Sb.Item
+                  className={classNames(
+                    { 'bg-gray-200': router[1] === 'manga' }
+                  )}
+                  active={router[1] === 'manga' ? true : undefined}
+                  href="/manga">
+                  Database
                 </Sb.Item>
                 <Sb.Item href="#">
-                  Upload
+                  Chapter Upload
                 </Sb.Item>
                 <Sb.Item href="#">
-                  Mirror Upload
+                  Mirror Source
                 </Sb.Item>
                 <Sb.Item href="#">
                   Setting Content Data
@@ -56,6 +76,9 @@ function Sidebar (): React.ReactElement {
               </Sb.Item>
             </Sb.ItemGroup>
           </Sb.Items>
+          <div className='self-end'>
+            <DarkModeSwitcher/>
+          </div>
       </Sb>
       <div id="backdropSidebar"
         className={classNames(
