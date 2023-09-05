@@ -1,3 +1,4 @@
+import { type CustomFlowbiteTheme, Label, TextInput } from 'flowbite-react'
 import { type FC, forwardRef } from 'react'
 import { useFormContext } from 'react-hook-form'
 
@@ -37,8 +38,8 @@ export const InputField: FC<IInputProps> =
           type={type}
           maxLength={maxLength}
           minLength={minLength}
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5
-          dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:border-blue-500 block w-full p-2.5
+          dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
           placeholder={placeholder ?? label}
           {...register(name)}
           {...props}/>
@@ -47,4 +48,40 @@ export const InputField: FC<IInputProps> =
     }
   )
 
+export const InputFieldFb: FC<IInputProps> =
+  forwardRef<HTMLInputElement, IInputProps>(
+    (
+      {
+        name,
+        label,
+        type = 'text',
+        size = 'medium',
+        className = '',
+        placeholder,
+        maxLength = 120,
+        minLength = 0,
+        ...props
+      }, ref
+    ) => {
+      const { register, formState: { errors } } = useFormContext()
+
+      return <div className="max-w-md mb-4">
+        <div className="mb-2 block">
+          <Label
+            htmlFor={name}
+            value={label}
+          />
+        </div>
+        <TextInput
+          id={name}
+          helperText={<span className='text-sm text-danger'>{ errors[name]?.message }</span>}
+          placeholder={placeholder}
+          {...register(name)}
+          {...props}
+        />
+      </div>
+    }
+  )
+
 InputField.displayName = 'Input Field'
+InputFieldFb.displayName = 'Input Field Flowbite Component'

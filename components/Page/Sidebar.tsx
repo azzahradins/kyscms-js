@@ -40,7 +40,7 @@ function Sidebar (): React.ReactElement {
               </Sb.Item>
               <Sb.Collapse
                 icon={FaBook}
-                label="Manga">
+                label="Content">
                 <Sb.Item
                   className={classNames(
                     { 'bg-gray-200': router[1] === 'manga' }

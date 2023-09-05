@@ -13,7 +13,7 @@ export default function RootLayout ({ children }: { children: React.ReactNode })
         </div>
         <div className='flex-auto'>
           <Navbar/>
-          <div>
+          <div className='dark:text-light-3'>
             {children}
           </div>
         </div>

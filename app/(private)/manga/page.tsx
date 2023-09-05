@@ -4,6 +4,7 @@
 import { type CustomFlowbiteTheme, Tabs } from 'flowbite-react'
 import { FaGlobe } from 'react-icons/fa'
 import MangaListData from './MangaListData'
+import { Title } from '@/components/Navigation/Title'
 
 const customTheme: CustomFlowbiteTheme['tab'] = {
   tabpanel: 'hidden',
@@ -25,7 +26,7 @@ const customTheme: CustomFlowbiteTheme['tab'] = {
 export default function MangaList (): React.ReactElement {
   return (
     <main>
-      <h2 className='wrapper text-dark-1 dark:text-bodydark2 hidden lg:block'>Manga Database</h2>
+      <Title value='Content Database' className='mx-5 mt-4'/>
       <Tabs.Group
         theme={customTheme}
         aria-label=" Tabs"

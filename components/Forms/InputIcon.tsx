@@ -1,14 +1,12 @@
 'use client'
 
 import { type CustomFlowbiteTheme, Label, TextInput } from 'flowbite-react'
-import { type FC, forwardRef, FunctionComponent, SVGProps } from 'react'
-import { HiSearch } from 'react-icons/hi'
+import { type FC, forwardRef, type FunctionComponent, type SVGProps } from 'react'
 import { useFormContext } from 'react-hook-form'
-import { FaSearchDollar } from 'react-icons/fa'
 
 interface IInputProps {
-  name: string,
-  icon: FunctionComponent<SVGProps<SVGSVGElement>>,
+  name: string
+  icon: FunctionComponent<SVGProps<SVGSVGElement>>
   label?: string
   type?: 'text' | 'number' | 'email' | 'password'
   size?: 'medium' | 'large'
@@ -48,7 +46,7 @@ export const InputIcon: FC<IInputProps> =
       const { register, formState: { errors } } = useFormContext()
 
       return (
-      <div className="max-w-md">
+      <div className="w-full lg:max-w-md">
         {label !== null && <div className="block">
           <Label
             htmlFor="email4"
