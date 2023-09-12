@@ -5,7 +5,7 @@ import { FaBars, FaTimes } from 'react-icons/fa'
 function Navbar (): React.ReactElement {
   const { isOpenOnSmallScreens, isPageWithSidebar, setOpenOnSmallScreens } = useSidebarContext()
 
-  return <header className="sticky top-0 lg:hidden">
+  return <header className="sticky top-0 lg:hidden z-99">
   <Nv fluid rounded className='bg-light-1'>
     {isPageWithSidebar && (
       <button

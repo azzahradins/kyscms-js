@@ -17,11 +17,11 @@ export const TextArea: FC<ITextArea> = forwardRef<HTMLInputElement, ITextArea>(
     label,
     placeholder,
     className
-  }) => {
+  }, ref) => {
     const { register, formState: { errors } } = useFormContext()
 
     return (
-      <div className="max-w-md mb-4" id="select">
+      <div className="w-full mb-4" id="select">
         <div className="mb-2 block">
           <Label
             htmlFor={name}

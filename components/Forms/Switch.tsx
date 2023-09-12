@@ -17,20 +17,11 @@ export const Switch: FC<ISwitch> = forwardRef<HTMLInputElement, ISwitch>(
     label,
     placeholder,
     className
-  }) => {
+  }, ref) => {
     const { control, formState: { errors } } = useFormContext()
 
-    const form = <Controller
-      control={control}
-      name={name}
-      render={({ field: { value, onChange } }) => <ToggleSwitch
-        label=''
-        checked={value}
-        onChange={onChange}
-      />}/>
-
     return (
-      <div className="max-w-md mb-4" id="select">
+      <div className="w-full mb-4" id="select">
         <div className="mb-2 block">
           <Label
             htmlFor={name}
@@ -39,7 +30,14 @@ export const Switch: FC<ISwitch> = forwardRef<HTMLInputElement, ISwitch>(
         <div className='flex flex-row text-sm font-light'>
           <span className='pr-3'>Content warning that may contain sensitive imageries such as pornographic, offensive, or other content unsuitable for viewing at work or in public places.</span>
           <div className='self-center justify-center'>
-            {form}
+          <Controller
+            control={control}
+            name={name}
+            render={({ field: { value, onChange } }) => <ToggleSwitch
+              label=''
+              checked={value}
+              onChange={onChange}/>}
+          />
           </div>
         </div>
         <span className='text-sm text-danger'>{ errors[name]?.message }</span>

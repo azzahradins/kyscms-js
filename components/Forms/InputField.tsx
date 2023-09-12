@@ -65,7 +65,7 @@ export const InputFieldFb: FC<IInputProps> =
     ) => {
       const { register, formState: { errors } } = useFormContext()
 
-      return <div className="max-w-md mb-4">
+      return <div className="w-full mb-4">
         <div className="mb-2 block">
           <Label
             htmlFor={name}
