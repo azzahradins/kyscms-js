@@ -1,5 +1,5 @@
 
-import List from '@/app/(private)/manga/component/List'
+import List from '@/app/(private)/manga/list/components/List'
 
 import { useForm } from 'react-hook-form'
 

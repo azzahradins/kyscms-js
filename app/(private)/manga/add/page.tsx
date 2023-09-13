@@ -74,10 +74,12 @@ export default function MangaAdd (): React.ReactElement {
           <span className='inline-flex gap-2 mb-2 mt-3 lg:mt-6'> <FaCloudUploadAlt className='self-center'/> Attachment </span>
           <InputFile
             name='cover'
-            label='Cover'/>
+            label='Cover'
+            accept='image/*'/>
           <InputFile
             name='banner'
-            label='Banner'/>
+            label='Banner'
+            accept='image/*'/>
         </div>
         <div className='inline-flex gap-2 lg:col-span-2 justify-end'>
             <Button color="warning" type="submit">

@@ -3,7 +3,7 @@
 // import Tabs from '@/components/Page/Tabs'
 import { type CustomFlowbiteTheme, Tabs } from 'flowbite-react'
 import { FaGlobe } from 'react-icons/fa'
-import MangaListData from './MangaListData'
+import MangaListData from './list/MangaListData'
 import { Title } from '@/components/Navigation/Title'
 
 const customTheme: CustomFlowbiteTheme['tab'] = {

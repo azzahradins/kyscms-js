@@ -7,9 +7,9 @@ import { useFormContext } from 'react-hook-form'
 interface IFileInput {
   name: string
   label: string
+  accept: string
   placeholder?: string
   className?: string
-  error?: { message: string, type: string, ref: string }
 }
 
 export const InputFile: React.FC<IFileInput> = forwardRef<HTMLInputElement, IFileInput>(
@@ -18,6 +18,7 @@ export const InputFile: React.FC<IFileInput> = forwardRef<HTMLInputElement, IFil
       name,
       label,
       placeholder,
+      accept,
       className
     }, ref
   ) => {
@@ -36,6 +37,7 @@ export const InputFile: React.FC<IFileInput> = forwardRef<HTMLInputElement, IFil
         <FileInput
           helperText={placeholder}
           id={name}
+          accept={accept}
           {...register(name)}
         />
       </div>

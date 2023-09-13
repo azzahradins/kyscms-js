@@ -11,6 +11,12 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'wp.verover.my.id',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 }
