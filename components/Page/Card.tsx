@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { FaEdit, FaPencilAlt } from 'react-icons/fa'
+import { FaPencilAlt } from 'react-icons/fa'
 
 interface Props {
   children: React.ReactNode
@@ -18,7 +18,7 @@ function Card ({
   className = ''
 }: Props): React.ReactElement {
   return (
-    <div className={`w-full bg-light-3 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ${className}`}>
+    <div className={`w-full bg-light-3 border border-gray-200 dark:border-none rounded-lg shadow dark:bg-dark-2 dark:border-gray-700 ${className}`}>
       { children }
     </div>
   )
@@ -35,9 +35,9 @@ Card.RenderImage = function CardImage ({ src, alt, actionButton }: IRenderImage)
         // layout="fill"
         src={src}/>
       {actionButton}
-      <div className='absolute bg-gradient-to-t from-light-3 dark:from-gray-800 to-transparent min-w-full min-h-full'></div>
+      <div className='absolute bg-gradient-to-t from-light-3 dark:from-dark-2 to-transparent min-w-full min-h-full'></div>
       <motion.button
-        className='absolute opacity-90 bg-gray-800 rounded-l-lg px-3 py-1 top-2 -right-28 overflow-hidden inline-flex justify-center text-sm gap-2'
+        className='absolute opacity-90 bg-dark-2 rounded-l-lg px-3 py-1 top-2 -right-28 overflow-hidden inline-flex justify-center text-sm gap-2'
         whileHover={{
           right: 0,
           opacity: 100,
