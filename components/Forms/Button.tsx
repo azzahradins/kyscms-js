@@ -3,8 +3,9 @@ interface Props {
   text: string
   className?: string
   onClick?: (e: any) => void
-  variant?: 'primary' | 'secondary' | 'disabled'
+  variant?: 'gray' | 'primary' | 'warning' | 'danger' | 'disabled'
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+  style?: 'pills' | ''
 }
 
 export const Button = ({
@@ -13,11 +14,14 @@ export const Button = ({
   onClick = () => {},
   variant = 'primary',
   size = 'md',
-  className = ''
+  className = '',
+  style = ''
 }: Props): React.ReactElement<Props> => {
+  const btnSize = `btn-${size}`
+  const pills = style ? 'rounded-full' : 'rounded-lg'
   return (
     <button
-      className={`${className} btn-${variant} btn-${size}`}
+      className={`${pills} rounded-full btn-${variant} ${btnSize} ${className}`}
       onClick={onClick}
       type={type}>{text}</button>
   )

@@ -1,6 +1,8 @@
 'use client'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { Button } from '@/components/Forms'
+import Link from 'next/link'
 
 export default function LandingPage (): JSX.Element {
   return (
@@ -14,7 +16,9 @@ export default function LandingPage (): JSX.Element {
             A improved tools that can help you stay organized and manage your tasks efficiently. Take control of your task and achieve your goals with our new interface.
           </h3>
           <div className='place-self-center lg:place-self-start'>
-            <button className="btn-primary">Access Dashboard</button>
+            <Link href={'/dashboard'}>
+              <Button text='Access Dashboard' type='button'/>
+            </Link>
           </div>
         </section>
         <section className='relative order-first lg:order-last'>

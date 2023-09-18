@@ -28,6 +28,7 @@ module.exports = {
         2: '#262e38'
       },
       primary: '#7e57c2',
+      primaryDk: '#64459b',
       white: '#FFFFFF',
       black: '#1C2434',
       'black-2': '#010101',
@@ -35,7 +36,6 @@ module.exports = {
       bodydark: '#AEB7C0',
       bodydark1: '#DEE4EE',
       bodydark2: '#8A99AF',
-      primary: '#3C50E0',
       secondary: '#80CAEE',
       stroke: '#E2E8F0',
       gray: '#EFF4FB',
