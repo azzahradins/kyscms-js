@@ -23,10 +23,10 @@ export default function MangaAdd (): React.ReactElement {
 
   return (
     <main className='wrapper'>
-      <BackNavigation target='/manga' label='Content Database'/>
+      <BackNavigation target='/manga' label='Content Database' className='mb-4 lg:mb-0'/>
       <Title value='Add New Collection' className='mb-4'/>
-      <Form methods={formMethod} onSubmit={submitData} className='grid grid-flow-row lg:grid-rows-none lg:grid-cols-2 gap-x-12 gap-y-3'>
-        <div>
+      <Form methods={formMethod} onSubmit={submitData} className='grid grid-flow-row lg:grid-rows-none lg:grid-cols-2 gap-x-4 gap-y-3'>
+        <div className='p-4 dark:bg-dark-2 w-full rounded-lg'>
           <span className='inline-flex gap-2 mb-2'> <FaInfoCircle className='self-center'/> Information </span>
           <InputField
             name='title'
@@ -54,32 +54,36 @@ export default function MangaAdd (): React.ReactElement {
             label='Content Category'
             options={[]}/>
         </div>
-        <div className='mb-4 border-gray-600 bg-gradient-to-r h-1 from-indigo-500 to-indigo-400 opacity-20 rounded-lg lg:hidden'/>
+        <div className='border-gray-600 bg-gradient-to-r h-1 from-indigo-500 to-indigo-400 opacity-20 rounded-lg lg:hidden'/>
         <div>
-          <span className='inline-flex gap-2 mb-2'> <FaCopy className='self-center'/> Publisher </span>
-          <InputField
-            name='serialization'
-            label='Serialization (Optional)'/>
-          <InputField
-            name='releaseYear'
-            label='Release Year'/>
-          <SelectInput
-            name='artist'
-            label='Content Artist'
-            options={[{ value: 'abdi', label: 'Abdi' }, { value: 'ente', label: 'Ente' }, { value: 'draft', label: 'Draft' }, { value: 'completed', label: 'Completed' }]}
-            isMulti/>
+          <div className='p-4 dark:bg-dark-2 w-full rounded-lg mb-0 lg:mb-4'>
+            <span className='inline-flex gap-2 mb-2'> <FaCopy className='self-center'/> Publisher </span>
+            <InputField
+              name='serialization'
+              label='Serialization (Optional)'/>
+            <InputField
+              name='releaseYear'
+              label='Release Year'/>
+            <SelectInput
+              name='artist'
+              label='Content Artist'
+              options={[{ value: 'abdi', label: 'Abdi' }, { value: 'ente', label: 'Ente' }, { value: 'draft', label: 'Draft' }, { value: 'completed', label: 'Completed' }]}
+              isMulti/>
+          </div>
 
-          <div className='my-5 mt-7 border-gray-600 bg-gradient-to-r h-1 from-indigo-500 to-indigo-400 opacity-20 rounded-lg lg:hidden'/>
+          <div className='my-3 border-gray-600 bg-gradient-to-r h-1 from-indigo-500 to-indigo-400 opacity-20 rounded-lg lg:hidden'/>
 
-          <span className='inline-flex gap-2 mb-2 mt-3 lg:mt-6'> <FaCloudUploadAlt className='self-center'/> Attachment </span>
-          <InputFile
-            name='cover'
-            label='Cover'
-            accept='image/*'/>
-          <InputFile
-            name='banner'
-            label='Banner'
-            accept='image/*'/>
+          <div className='p-4 dark:bg-dark-2 w-full rounded-lg'>
+            <span className='inline-flex gap-2'> <FaCloudUploadAlt className='self-center'/> Attachment </span>
+            <InputFile
+              name='cover'
+              label='Cover'
+              accept='image/*'/>
+            <InputFile
+              name='banner'
+              label='Banner'
+              accept='image/*'/>
+          </div>
         </div>
         <div className='inline-flex gap-2 lg:col-span-2 justify-end'>
             <Button color="warning" type="submit">
