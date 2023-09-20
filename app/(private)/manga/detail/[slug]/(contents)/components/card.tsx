@@ -3,7 +3,7 @@ import { LoremIpsum } from '@/example-data/strings'
 import { type ReactElement } from 'react'
 
 export const CardDetail = (): ReactElement => {
-  return <Card className='w-full lg:max-w-70'>
+  return <Card className='lg:max-w-70 h-8/12'>
     <Card.RenderImage
       src='https://wp.verover.my.id/wp-content/uploads/contents/a-gate-opened-on-my-first-day-as-a-politician/_cover.jpg'
       alt='stay away from my image'/>

@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import { type ReactNode } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { usePathname } from 'next/navigation';
+import { usePathname } from 'next/navigation'
 interface Props {
   children: React.ReactNode[]
   icon?: ReactNode
@@ -19,23 +19,21 @@ interface ITabItemProps {
 
 export const Tabs = ({ children }: Props): React.ReactElement => {
   const [activeTab, setActiveTab] = React.useState(0)
-  
-  const currentPage =  usePathname()
 
+  const currentPage = usePathname()
 
-  useEffect((() => {
-    React.Children.forEach(children, (child:any, index) =>{
+  useEffect(() => {
+    React.Children.forEach(children, (child: any, index) => {
       const { href } = child?.props
-      if(href === currentPage){
+      if (href === currentPage) {
         setActiveTab(index)
       }
     })
-  }), [])
-
+  }, [])
 
   return (
     <div>
-      <div className="border border-gray-200 dark:border-none dark:bg-dark-2 mb-3 p-4 flex flex-row gap-8 rounded-lg">
+      <div className="border border-gray-200 dark:border-none dark:bg-dark-2 mb-4 p-4 flex flex-row gap-8 rounded-lg">
         {React.Children.map(children, (child: any, index) => {
           return (
             <Link
@@ -67,7 +65,7 @@ export const Tabs = ({ children }: Props): React.ReactElement => {
   )
 }
 
-Tabs.Item = function TabItem({ key, title, component }: ITabItemProps): React.ReactElement {
+Tabs.Item = function TabItem ({ key, title, component }: ITabItemProps): React.ReactElement {
   if (key === undefined && title === undefined && component === undefined) {
     throw new Error('Must input valid key for the component')
   }

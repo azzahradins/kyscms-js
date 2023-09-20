@@ -1,7 +1,9 @@
 'use client'
 
 import { Button, Form, InputIcon } from '@/components/Forms'
-import { type CustomFlowbiteTheme, Timeline, Label } from 'flowbite-react'
+import { type CustomFlowbiteTheme, Timeline } from 'flowbite-react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { FaSearchengin } from 'react-icons/fa'
 
@@ -14,6 +16,8 @@ const timeline: CustomFlowbiteTheme['timeline'] = {
 }
 
 export default function MangaDetailChapters (): React.ReactElement {
+  const route = usePathname()
+
   return (
     <>
       <div className='p-4 dark:bg-dark-2 w-full rounded-lg inline-flex justify-between'>
@@ -25,11 +29,13 @@ export default function MangaDetailChapters (): React.ReactElement {
               placeholder='Search Chapter'/>
           </Form>
         </div>
-        <Button
-          type='button'
-          size='xs'
-          style='pills'
-          text='Add New Chapter'/>
+        <Link href={`${route}/chapters/add`}>
+          <Button
+            type='button'
+            size='xs'
+            style='pills'
+            text='Add Chapter'/>
+        </Link>
       </div>
       <div className='p-4 dark:bg-dark-2 w-full rounded-lg'>
         <Timeline theme={timeline}>

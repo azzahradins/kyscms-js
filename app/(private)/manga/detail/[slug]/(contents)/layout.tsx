@@ -7,12 +7,12 @@ import MangaDetailChapters from './chapters/page'
 import MangaDetailCommunity from './community/page'
 import MangaDetailSettings from './settings/page'
 
-export default function MangaLayout({ params, children }: { params: { slug: string }, children: React.ReactNode }): JSX.Element {
+export default function MangaLayout ({ params, children }: { params: { slug: string }, children: React.ReactNode }): JSX.Element {
   const baseUrl = `/manga/detail/${params.slug}`
   return (
     <main className="wrapper">
       <BackNavigation target='/manga' label='Content Database' />
-      <div className='flex flex-col lg:flex-row gap-3 lg:gap-6 mt-4'>
+      <div className='flex flex-col lg:flex-row gap-3 lg:gap-4 mt-4'>
       <CardDetail />
         <div className='flex-1'>
           <Tabs>
