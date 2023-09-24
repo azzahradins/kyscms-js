@@ -1,6 +1,6 @@
 'use client'
 
-import { Button, Form, InputField } from '@/components/Forms'
+import { Button, Form } from '@/components/Forms'
 import { BackNavigation } from '@/components/Navigation/BackNavigation'
 import { useForm } from 'react-hook-form'
 import ChapterAddForm from './chapterAddForm'
