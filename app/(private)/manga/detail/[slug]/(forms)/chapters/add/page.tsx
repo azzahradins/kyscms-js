@@ -9,6 +9,10 @@ import { PreviewImage } from './components/PreviewImage'
 import { useState } from 'react'
 import { SortImage } from './components/SortImage'
 import { DragDrop } from './components/DragDrop'
+import { InputDateTime } from '@/components/Forms/InputDateTime'
+import { FaCalendarDay } from 'react-icons/fa'
+import { Scheduler } from './components/Scheduler'
+import { format, parseISO } from 'date-fns'
 
 export interface IFileList {
   id: string
@@ -18,8 +22,12 @@ export interface IFileList {
 export default function ChapterAdd ({ params }: { params: { slug: string }, children: React.ReactNode }): React.ReactElement {
   const [fileList, setFileList] = useState<IFileList[]>([])
 
+  const handleSubmit = (val: any) => {
+    console.log(new Date(val.uploadSchedule).toISOString());    
+  }
+
   return (
-    <Form methods={useForm()} onSubmit={(val: any) => { console.log(val) }} className='wrapper'>
+    <Form methods={useForm()} onSubmit={handleSubmit} className='wrapper'>
       <div className='flex flex-row justify-between mb-4'>
         <BackNavigation target={`/manga/detail/${params.slug}/`} label='Detail Manga' />
         <div className='lg:inline-flex hidden gap-2'>
@@ -37,9 +45,11 @@ export default function ChapterAdd ({ params }: { params: { slug: string }, chil
             fileList={fileList}
             setFileList={setFileList}/>
         </div>
-        <PreviewImage itemList={fileList}/>
+        <div className='w-3/4 relative'>
+          <Scheduler />
+          <PreviewImage itemList={fileList}/>
+        </div>
       </div>
-      {/* <ChapterAddForm /> */}
     </Form>
   )
 }
