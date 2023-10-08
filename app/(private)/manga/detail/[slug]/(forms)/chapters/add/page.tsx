@@ -9,21 +9,19 @@ import { PreviewImage } from './components/PreviewImage'
 import { useState } from 'react'
 import { SortImage } from './components/SortImage'
 import { DragDrop } from './components/DragDrop'
-import { InputDateTime } from '@/components/Forms/InputDateTime'
-import { FaCalendarDay } from 'react-icons/fa'
 import { Scheduler } from './components/Scheduler'
-import { format, parseISO } from 'date-fns'
+import { formatDateToIso } from '@/config/utils'
 
 export interface IFileList {
   id: string
   file: File
 }
 
-export default function ChapterAdd ({ params }: { params: { slug: string }, children: React.ReactNode }): React.ReactElement {
+export default function ChapterAdd({ params }: { params: { slug: string }, children: React.ReactNode }): React.ReactElement {
   const [fileList, setFileList] = useState<IFileList[]>([])
 
-  const handleSubmit = (val: any) => {
-    console.log(new Date(val.uploadSchedule).toISOString());    
+  const handleSubmit = (val: any): void => {
+    console.log(formatDateToIso(val.uploadSchedule))
   }
 
   return (
@@ -31,8 +29,8 @@ export default function ChapterAdd ({ params }: { params: { slug: string }, chil
       <div className='flex flex-row justify-between mb-4'>
         <BackNavigation target={`/manga/detail/${params.slug}/`} label='Detail Manga' />
         <div className='lg:inline-flex hidden gap-2'>
-          <Button text='Save Chapter as Draft' size='sm' style='pills' type='button' variant='gray'/>
-          <Button text='Post Chapter' size='sm' style='pills' type='submit'/>
+          <Button text='Save Chapter as Draft' size='sm' style='pills' type='button' variant='gray' />
+          <Button text='Post Chapter' size='sm' style='pills' type='submit' />
         </div>
       </div>
 
@@ -40,14 +38,15 @@ export default function ChapterAdd ({ params }: { params: { slug: string }, chil
         <div className='w-full lg:min-w-75'>
           <ChapterInformation />
           <DragDrop
-            setFileList={setFileList}/>
+            setFileList={setFileList} />
           <SortImage
             fileList={fileList}
-            setFileList={setFileList}/>
+            setFileList={setFileList} />
         </div>
         <div className='w-3/4 relative'>
           <Scheduler />
-          <PreviewImage itemList={fileList}/>
+          <PreviewImage
+            itemList={fileList}/>
         </div>
       </div>
     </Form>

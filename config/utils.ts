@@ -14,3 +14,7 @@ export const hasInputChildren = (element: ReactNode): boolean => {
   // If "children" is a single element, check if it's non-null/undefined
   return element !== null
 }
+
+export const formatDateToIso = (value: Date): string => {
+  return new Date(value).toISOString()
+}
