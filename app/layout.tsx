@@ -1,5 +1,6 @@
 import '../assets/styles/globals.css'
 import '../assets/styles/satoshi.css'
+import Loading from './loading'
 
 import { Providers } from './providers'
 
@@ -11,7 +12,7 @@ import 'react-datepicker/dist/react-datepicker.css'
 config.autoAddCss = false
 
 export const metadata = {
-  title: 'PREVIEW STORAGE',
+  title: 'Content Management System',
   description: 'Structuring NextJS'
 }
 
@@ -20,6 +21,7 @@ export default function RootLayout ({ children }: { children: React.ReactNode })
     <html lang="en" suppressHydrationWarning>
       <head />
       <body>
+        <Loading/>
         <Providers>{children}</Providers>
       </body>
     </html>

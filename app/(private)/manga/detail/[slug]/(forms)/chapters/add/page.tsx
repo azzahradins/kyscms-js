@@ -17,7 +17,7 @@ export interface IFileList {
   file: File
 }
 
-export default function ChapterAdd({ params }: { params: { slug: string }, children: React.ReactNode }): React.ReactElement {
+export default function ChapterAdd ({ params }: { params: { slug: string }, children: React.ReactNode }): React.ReactElement {
   const [fileList, setFileList] = useState<IFileList[]>([])
 
   const handleSubmit = (val: any): void => {
