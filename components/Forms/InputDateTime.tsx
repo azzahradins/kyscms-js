@@ -1,15 +1,15 @@
-import { format, setHours, setMinutes } from "date-fns";
-import { ReactElement, useState } from "react";
-import ReactDatePicker, { registerLocale } from "react-datepicker";
-import id from "date-fns/locale/id";
-import { Controller, useFormContext } from "react-hook-form";
-import { useTableContext } from "flowbite-react/lib/esm/components/Table/TableContext";
+import { format, setHours, setMinutes } from 'date-fns'
+import { type ReactElement, useState } from 'react'
+import ReactDatePicker, { registerLocale } from 'react-datepicker'
+import id from 'date-fns/locale/id'
+import { Controller, useFormContext } from 'react-hook-form'
+import { useTableContext } from 'flowbite-react/lib/esm/components/Table/TableContext'
 
 registerLocale('id', id)
 
 interface IInputDateTime {
   name: string
-  value?:Date
+  value?: Date
   minDate?: Date
   maxDate?: Date
   timeSelect?: boolean
@@ -25,7 +25,11 @@ export const InputDateTime = ({
   className
 }: IInputDateTime): ReactElement => {
   const { control, register, formState: { errors } } = useFormContext()
-  
+
+  const handleMinTime = (time: any): string => {
+    return time > new Date() ? '' : 'text-red-500'
+  }
+
   return (
     <div className="inputDateTime">
       <Controller
@@ -35,9 +39,11 @@ export const InputDateTime = ({
           <ReactDatePicker
             className="inputField"
             selected={field.value}
-            onChange={(date: Date) => field.onChange(date)}
+            minDate={new Date()}
+            onChange={(date: Date) => { field.onChange(date) }}
             showTimeSelect={timeSelect}
             locale='id'
+            timeClassName={handleMinTime}
             dateFormat="d MMMM yyyy, HH:mm"
           />
         )}
