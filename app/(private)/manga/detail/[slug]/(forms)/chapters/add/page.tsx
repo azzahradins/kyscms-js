@@ -21,7 +21,8 @@ export default function ChapterAdd ({ params }: { params: { slug: string }, chil
   const [fileList, setFileList] = useState<IFileList[]>([])
 
   const handleSubmit = (val: any): void => {
-    console.log(formatDateToIso(val.uploadSchedule))
+    // console.log(formatDateToIso(val.uploadSchedule))
+    console.log(val)
   }
 
   return (
@@ -43,7 +44,7 @@ export default function ChapterAdd ({ params }: { params: { slug: string }, chil
             fileList={fileList}
             setFileList={setFileList} />
         </div>
-        <div className='w-3/4 relative'>
+        <div className='w-full relative'>
           <Scheduler />
           <PreviewImage
             itemList={fileList}/>

@@ -7,7 +7,7 @@ export const Scheduler = (): React.ReactElement => {
       <div className='mb-2'>
         <span className='inline-flex gap-2'> <FaCalendarDay className='self-center' /> Scheduler </span>
       </div>
-      <InputDateTime name='uploadSchedule' />
+      <InputDateTime name='uploadSchedule' label='Upload Scheduler' placeholder='Upload Scheduler'/>
     </div>
   )
 }

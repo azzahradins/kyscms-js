@@ -251,3 +251,39 @@ span.flatpickr-weekday,
 .inputDateTime > div > div.react-datepicker__input-container input {
   @apply w-full
 }
+
+.react-calendar__tile:disabled {
+  @apply dark:bg-dark-1 opacity-60
+}
+
+.react-calendar__navigation button:disabled {
+  @apply dark:bg-dark-1 opacity-60 rounded-full
+}
+
+.react-calendar__navigation button:enabled:hover {
+  @apply dark:bg-primaryDk rounded-lg bg-opacity-60
+}
+
+.react-calendar__navigation button:enabled:focus {
+  @apply dark:bg-purple-600 rounded-lg bg-opacity-60
+}
+
+.react-calendar__tile:enabled:hover, .react-calendar__tile:enabled:focus{
+  @apply dark:bg-purple-600
+}
+
+.react-calendar__tile--active {
+  @apply dark:bg-purple-700
+}
+
+.react-calendar__tile--active:enabled:hover {
+  @apply dark:bg-primary
+}
+
+.react-calendar__tile--now {
+  @apply dark:bg-violet-300
+}
+
+.react-calendar__navigation{
+  @apply gap-x-1
+}

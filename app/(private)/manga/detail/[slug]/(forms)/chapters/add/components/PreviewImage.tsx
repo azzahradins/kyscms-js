@@ -28,8 +28,8 @@ export const PreviewImage = ({
   )
 
   const perpage = (
-    <article className='grid grid-cols-4 gap-2 overflow-y-visible'>
-      image here
+    <article className='text-center grid grid-cols-1 gap-2 overflow-y-visible'>
+      <p className='w-full italic'>Under development</p>
     </article>
   )
 

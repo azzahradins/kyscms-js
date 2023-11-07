@@ -1,4 +1,5 @@
 import React, { type ReactNode } from 'react'
+import { format } from 'date-fns'
 
 export const hasInputChildren = (element: ReactNode): boolean => {
   if (element === false || !React.isValidElement(element)) {
@@ -17,4 +18,8 @@ export const hasInputChildren = (element: ReactNode): boolean => {
 
 export const formatDateToIso = (value: Date): string => {
   return new Date(value).toISOString()
+}
+
+export const formatDateToReadable = (value: Date): string => {
+  return format(value, 'dd MMMM yyyy')
 }
