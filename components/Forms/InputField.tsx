@@ -1,6 +1,6 @@
-import { type CustomFlowbiteTheme, Label, TextInput } from 'flowbite-react'
+import { Label, TextInput } from 'flowbite-react'
 import { type FC, forwardRef } from 'react'
-import { useFormContext } from 'react-hook-form'
+import { get, useFormContext } from 'react-hook-form'
 
 interface IInputProps {
   name: string
@@ -29,7 +29,9 @@ export const InputField: FC<IInputProps> =
         ...props
       }, ref
     ) => {
-      const { register, formState: { errors } } = useFormContext()
+      const { register, formState } = useFormContext()
+
+      const error = get(formState.errors, name)
 
       return <div key={name} className={className}>
         <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{label}</label>
@@ -41,8 +43,8 @@ export const InputField: FC<IInputProps> =
           className="inputField"
           placeholder={placeholder ?? label}
           {...register(name)}
-          {...props}/>
-        <label className='text-sm text-danger'>{ errors[name]?.message }</label>
+          {...props} />
+        <label className='text-sm text-danger'>{(Boolean(error)) && error.message}</label>
       </div>
     }
   )
@@ -62,7 +64,9 @@ export const InputFieldFb: FC<IInputProps> =
         ...props
       }, ref
     ) => {
-      const { register, formState: { errors } } = useFormContext()
+      const { register, formState } = useFormContext()
+
+      const error = get(formState.errors, name)
 
       return <div className="w-full mb-4">
         <div className="mb-2 block">
@@ -73,7 +77,7 @@ export const InputFieldFb: FC<IInputProps> =
         </div>
         <TextInput
           id={name}
-          helperText={<span className='text-sm text-danger'>{ errors[name]?.message }</span>}
+          helperText={<span className='text-sm text-danger'>{(Boolean(error)) && error.message}</span>}
           placeholder={placeholder}
           {...register(name)}
           {...props}
