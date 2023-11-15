@@ -245,6 +245,11 @@ span.flatpickr-weekday,
   @apply dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500
 }
 
+.inputField:disabled {
+  @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:border-blue-500 block w-full p-2.5; 
+  @apply dark:bg-gray-700 opacity-40 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500
+}
+
 .inputDateTime, 
 .inputDateTime > div.react-datepicker-wrapper, 
 .inputDateTime > div > div.react-datepicker__input-container

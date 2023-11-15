@@ -12,6 +12,7 @@ interface IInputProps {
   maxLength?: number
   minLength?: number
   error?: { message: string, type: string, ref: string }
+  hidden?: boolean
 }
 
 export const InputField: FC<IInputProps> =
@@ -26,6 +27,7 @@ export const InputField: FC<IInputProps> =
         placeholder,
         maxLength = 120,
         minLength = 0,
+        hidden,
         ...props
       }, ref
     ) => {
@@ -33,7 +35,7 @@ export const InputField: FC<IInputProps> =
 
       const error = get(formState.errors, name)
 
-      return <div key={name} className={className}>
+      return <div key={name} className={className} hidden={hidden}>
         <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{label}</label>
         <input
           id={name}

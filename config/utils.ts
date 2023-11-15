@@ -20,6 +20,6 @@ export const formatDateToIso = (value: Date): string => {
   return new Date(value).toISOString()
 }
 
-export const formatDateToReadable = (value: Date): string => {
-  return format(value, 'dd MMMM yyyy')
+export const formatDateToReadable = (value: Date | undefined): string => {
+  return (typeof value === 'object') ? format(value, 'dd MMMM yyyy') : ''
 }

@@ -9,7 +9,6 @@ export const PreviewImage = ({
   itemList = []
 }: IPreviewImage): React.ReactElement => {
   const [preview, setPreview] = useState(true)
-  const [currentPage, setCurrentPage] = useState(0)
 
   const compact = (
     <article className='grid grid-cols-4 gap-2'>

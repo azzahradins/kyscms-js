@@ -7,7 +7,6 @@ const useOutsideClick = (callback: any): React.MutableRefObject<any> => {
   React.useEffect(() => {
     const handleClick = (event: React.ChangeEvent<HTMLInputElement> | any): void => {
       if (ref.current && !ref.current.contains(event.target)) {
-        console.log(ref.current, event.target)
         callback()
       }
     }
