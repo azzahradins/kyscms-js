@@ -23,3 +23,9 @@ export const formatDateToIso = (value: Date): string => {
 export const formatDateToReadable = (value: Date | undefined): string => {
   return (typeof value === 'object') ? format(value, 'dd MMMM yyyy') : ''
 }
+
+export const formatHours = (value: string) => {
+  return parseInt(value) < 10 ? 
+    parseInt(`0${value}`) : 
+    parseInt(value)
+}

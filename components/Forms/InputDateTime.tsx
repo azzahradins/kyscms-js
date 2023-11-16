@@ -3,7 +3,7 @@ import { registerLocale } from 'react-datepicker'
 import id from 'date-fns/locale/id'
 import { Controller, useFormContext } from 'react-hook-form'
 import Calendar from 'react-calendar'
-import { formatDateToReadable } from '@/config/utils'
+import { formatDateToReadable, formatHours } from '@/config/utils'
 import useOutsideClick from '@/hooks/OutsideClick'
 import { Checkbox, Label } from 'flowbite-react'
 import { InputField } from './InputField'
@@ -41,8 +41,10 @@ export const InputDateTime = ({
   useEffect(() => {
     if (inputDate && inputTime) {
       const date = inputDate
-      date.setHours(parseInt(inputTime.split(':')[0]))
-      // setValue(name, 'agrivageres')
+      date.setHours(formatHours(inputTime.split(':')[0]))
+      date.setMinutes(formatHours(inputTime.split(':')[1]))
+      date.setSeconds(0)
+      setValue(name, date)
     }
   }, [inputDate, inputTime])
 
