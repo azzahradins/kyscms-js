@@ -44,7 +44,7 @@ export default function ChapterAdd({ params }: { params: { slug: string }, child
             fileList={fileList}
             setFileList={setFileList} />
         </div>
-        <div className='w-full relative'>
+        <div className='w-full relative flex flex-col-reverse md:flex-col gap-4'>
           <Scheduler />
           <PreviewImage
             itemList={fileList} />
