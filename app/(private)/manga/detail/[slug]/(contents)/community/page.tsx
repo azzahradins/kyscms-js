@@ -1,5 +1,11 @@
+import QuickAccess from './QuickAccess'
+import CommentSection from './CommentSection'
+
 export default function MangaDetailCommunity (): React.ReactElement {
-  return (<div>
-    Manga Community all Comments are here
-  </div>)
+  return (
+    <div>
+      <QuickAccess />
+      <CommentSection />
+    </div>
+  )
 }

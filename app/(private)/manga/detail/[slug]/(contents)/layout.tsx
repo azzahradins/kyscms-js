@@ -13,7 +13,7 @@ export default function MangaLayout ({ params, children }: { params: { slug: str
     <main className="wrapper">
       <BackNavigation target='/manga' label='Content Database' />
       <div className='flex flex-col lg:flex-row gap-3 lg:gap-4 mt-4'>
-      <CardDetail />
+        <CardDetail />
         <div className='flex-1'>
           <Tabs>
             <Tabs.Item

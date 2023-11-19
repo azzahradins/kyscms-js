@@ -18,8 +18,10 @@ function Card ({
   className = ''
 }: Props): React.ReactElement {
   return (
-    <div className={`w-full bg-light-3 border border-gray-200 dark:border-none rounded-lg shadow dark:bg-dark-2 dark:border-gray-700 ${className}`}>
-      { children }
+    <div className={`w-full dark:border-gray-700 border border-gray-200 dark:border-none rounded-lg shadow  ${className}`}>
+      <div className='bg-light-3 dark:bg-dark-2'>
+        { children }
+      </div>
     </div>
   )
 }
@@ -58,7 +60,7 @@ Card.Header = function CardHeader ({ children, ...props }: Props): React.ReactEl
     </h5>)
   }
   return (
-    <div className="mb-2 flex px-6 pt-6 items-center justify-between">
+    <div className="mb-2 flex px-6 pt-6 items-center justify-between ">
       { component }
     </div>
   )
