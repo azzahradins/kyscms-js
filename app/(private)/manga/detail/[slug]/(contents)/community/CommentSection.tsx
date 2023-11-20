@@ -28,19 +28,19 @@ export default function CommentSection (): React.ReactElement {
     <h3>Newest Comment</h3>
     <article className='flex flex-col gap-4'>
       {[...Array(8)].map((val) => (
-        <div className='flex flex-row gap-4' key={val}>
-          <section className='flex flex-col justify-center'>
+        <div className='flex flex-row gap-2' key={val}>
+          <section className='flex flex-col w-fit max-w-15 text-ellipsis overflow-hidden text-sm'>
             <div className='inline-flex items-center gap-2'>
               <FaArrowUp className='text-blue-500'/>
-              <label>%upvote_count%</label>
+              <label>300k</label>
             </div>
             <div className='inline-flex items-center gap-2'>
               <FaArrowDown className='text-orange-500'/>
-              <label>%downvote_count%</label>
+              <label>14k</label>
             </div>
           </section>
-          <section className='border border-gray-600 flex-grow rounded-lg p-4'>
-            <h3 className='font-medium'>%chapters%</h3>
+          <section className='border border-gray-600 flex-grow rounded-lg p-2'>
+            <h4 className='font-medium'>%chapters%</h4>
             <p className='font-light'>%members%</p>
             <p>%comments%</p>
           </section>
@@ -50,10 +50,16 @@ export default function CommentSection (): React.ReactElement {
     <Pagination
       theme={customPagination}
       currentPage={currentPage}
-      totalPages={4}
-      onPageChange={(page) => { setCurrentPage(page) }}
+      totalPages={100}
+      previousLabel=''
+      nextLabel=''
+      onPageChange={(page) => {
+        console.log(page)
+        setCurrentPage(page)
+      }}
       showIcons
-      className='place-self-end'/>
+      layout='navigation'
+      className='place-self-start'/>
   </div>
   )
 }

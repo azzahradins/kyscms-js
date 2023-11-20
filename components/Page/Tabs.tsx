@@ -33,7 +33,7 @@ export const Tabs = ({ children }: Props): React.ReactElement => {
 
   return (
     <div>
-      <div className="border border-gray-200 dark:border-none dark:bg-dark-2 mb-4 p-4 flex flex-row gap-8 rounded-lg">
+      <div className="border border-gray-200 dark:border-none dark:bg-dark-2 mb-4 py-4 justify-between md:justify-start flex flex-row gap-4 md:gap-8 px-2 md:px-4 rounded-lg">
         {React.Children.map(children, (child: any, index) => {
           return (
             <Link

@@ -24,6 +24,10 @@ h3 {
   @apply text-lg
 }
 
+h4 {
+  @apply text-base
+}
+
 .btn-xs {
   @apply px-3 py-2 text-xs font-medium text-center
 }

@@ -20,21 +20,19 @@ export default function MangaDetailChapters (): React.ReactElement {
 
   return (
     <>
-      <div className='p-4 dark:bg-dark-2 w-full rounded-lg inline-flex justify-between'>
-        <div>
-          <Form methods={useForm()} onSubmit={useForm().handleSubmit((data, e) => { console.log(data) })} className='inline-flex'>
-            <InputIcon
-              name='search'
-              icon={FaSearchengin}
-              placeholder='Search Chapter'/>
-          </Form>
-        </div>
-        <Link href={`${route}/chapters/add`}>
+      <div className='p-4 dark:bg-dark-2 w-full rounded-lg flex flex-col md:flex-row gap-2 justify-between'>
+        <Form methods={useForm()} onSubmit={useForm().handleSubmit((data, e) => { console.log(data) })} className='inline-flex'>
+          <InputIcon
+            name='search'
+            icon={FaSearchengin}
+            placeholder='Search Chapter'/>
+        </Form>
+        <Link href={`${route}/chapters/add`} className='self-end'>
           <Button
             type='button'
             size='xs'
             style='pills'
-            text='Add Chapter'/>
+            text='Add New Chapter'/>
         </Link>
       </div>
       <div className='p-4 dark:bg-dark-2 w-full rounded-lg'>
