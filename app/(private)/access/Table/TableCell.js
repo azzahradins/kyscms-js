@@ -1,6 +1,5 @@
 import { Table } from "flowbite-react"
-import { Badge } from "flowbite-react"
-import StatusLogic  from "./Logic/StatusLogic"
+import StatusLogic  from "../Logic/StatusLogic"
 
 export default function BodyTable ({ Body, Index }) {
     return <>
