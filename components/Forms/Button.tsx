@@ -9,7 +9,7 @@ interface Props {
 }
 
 export const Button = ({
-  type,
+  type = 'button',
   text,
   onClick = () => {},
   variant = 'primary',
