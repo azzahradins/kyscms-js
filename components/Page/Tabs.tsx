@@ -1,5 +1,6 @@
+'use client'
+
 import React, { useEffect } from 'react'
-import classNames from 'classnames'
 import { type ReactNode } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
@@ -23,12 +24,14 @@ export const Tabs = ({ children }: Props): React.ReactElement => {
   const currentPage = usePathname()
 
   useEffect(() => {
-    React.Children.forEach(children, (child: any, index) => {
-      const { href } = child?.props
-      if (href === currentPage) {
-        setActiveTab(index)
-      }
-    })
+    if(children){
+      React.Children.forEach(children, (child: any, index) => {
+        const { href } = child?.props
+        if (href === currentPage) {
+          setActiveTab(index)
+        }
+      })
+    }    
   }, [])
 
   return (
@@ -69,7 +72,7 @@ Tabs.Item = function TabItem ({ key, title, component }: ITabItemProps): React.R
   if (key === undefined && title === undefined && component === undefined) {
     throw new Error('Must input valid key for the component')
   }
-  return <></>
+  return <div></div>
 }
 
 Tabs.displayName = 'Tabs Actual'

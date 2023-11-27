@@ -36,17 +36,8 @@ Card.RenderImage = function CardImage ({ src, alt, actionButton }: IRenderImage)
         className='object-cover rounded-t-md'
         // layout="fill"
         src={src}/>
-      {actionButton}
       <div className='absolute bg-gradient-to-t from-light-3 dark:from-dark-2 to-transparent min-w-full min-h-full'></div>
-      <motion.button
-        className='absolute opacity-90 bg-dark-2 rounded-l-lg px-3 py-1 top-2 -right-28 overflow-hidden inline-flex justify-center text-sm gap-2'
-        whileHover={{
-          right: 0,
-          opacity: 100,
-          transition: { duration: 0.6 }
-        }}>
-        <FaPencilAlt className='self-center'/> Edit Information
-      </motion.button>
+      {actionButton}
     </div>
   )
 }
