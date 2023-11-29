@@ -58,7 +58,17 @@ export const CardDetail = (): ReactElement => {
         </div>
       </Card.Body>
     </Card>
-    <Modal isOpen={openEdit} toggleModal={toggleEdit}/>
+    <Modal isOpen={openEdit} toggleModal={toggleEdit}>
+      <Modal.Header>
+        Edit %title% content info
+      </Modal.Header>
+      <Modal.Body>
+        %form%
+      </Modal.Body>
+      <Modal.Footer>
+        Please make sure your data is correct
+      </Modal.Footer>
+    </Modal>
   </> 
   
 }

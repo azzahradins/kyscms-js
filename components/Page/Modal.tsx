@@ -1,17 +1,17 @@
 import { Modal as Md } from "flowbite-react"
-import { ReactElement, useEffect, useState } from "react"
+import { ReactElement, useState } from "react"
 import { Button } from "../Forms";
 
 interface CommonProps {
-  children?: React.ReactNode
+  children: React.ReactNode | React.ReactNode[]
 }
 
-interface Controlled extends CommonProps{
+interface Controlled extends CommonProps {
   isOpen: boolean,
   toggleModal: (toggler: boolean) => void,
 }
 
-interface Uncontrolled extends CommonProps{
+interface Uncontrolled extends CommonProps {
   text?: string
 }
 
@@ -20,52 +20,45 @@ type Props = Controlled | Uncontrolled
 function Modal(props: Props): ReactElement {
   const [modal, toggleModal] = useState(false)
 
-  if('isOpen' in props){
-    return <Structure 
-      isOpen={props.isOpen} 
+  if ('isOpen' in props) {
+    return <Structure
+      isOpen={props.isOpen}
       toggleModal={props.toggleModal}
-    />
+    > {props.children} </Structure>
   } else {
     return <>
       <Button
         text={props.text || "Open Modal"}
         type="button"
-        onClick={()=>{toggleModal(true)}} 
+        onClick={() => { toggleModal(true) }}
       />
-      <Structure 
-        isOpen={modal} 
+      <Structure
+        isOpen={modal}
         toggleModal={toggleModal}
-      />
+      > {props.children} </Structure>
     </>
   }
-  
+
 }
 
-const Structure = ({isOpen, toggleModal}: Controlled): ReactElement => {
-  return <Md show={isOpen} onClose={() => toggleModal(false)}>
-    <Md.Header>Terms of Service</Md.Header>
-    <Md.Body>
-      <div className="space-y-6">
-        <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-          With less than a month to go before the European Union enacts new consumer privacy laws for its citizens,
-          companies around the world are updating their terms of service agreements to comply.
-        </p>
-        <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-          The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant
-          to ensure a common set of data rights in the European Union. It requires organizations to notify users as
-          soon as possible of high-risk data breaches that could personally affect them.
-        </p>
-      </div>
-    </Md.Body>
-    <Md.Footer>
-      <Button text="Close" type="button" onClick={() => toggleModal(false)} />
-      <Button text="Yes" type="button" variant="primary" onClick={() => toggleModal(false)} />
-    </Md.Footer>
+const Structure = ({ isOpen, toggleModal, children }: Controlled): ReactElement => {
+  console.log(children);
+    
+  return <Md show={isOpen} onClose={() => toggleModal(false)} className="z-999">
+    {children}
   </Md>
 }
 
-Modal.Header = (header: string | ReactElement) => {
-  return header
+Modal.Header = (props : CommonProps): ReactElement => {
+  return <Md.Header>{props.children}</Md.Header>
+}
+
+Modal.Body = (props: CommonProps): ReactElement => {
+  return <Md.Body>{props.children}</Md.Body>
+}
+
+Modal.Footer = (props: CommonProps): ReactElement => {
+  return <Md.Footer className="py-4">{props.children}</Md.Footer>
 }
 
 export default Modal
