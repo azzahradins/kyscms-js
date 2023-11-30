@@ -41,24 +41,22 @@ function Modal(props: Props): ReactElement {
 
 }
 
-const Structure = ({ isOpen, toggleModal, children }: Controlled): ReactElement => {
-  console.log(children);
-    
+const Structure = ({ isOpen, toggleModal, children }: Controlled): ReactElement => {    
   return <Md show={isOpen} onClose={() => toggleModal(false)} className="z-999">
     {children}
   </Md>
 }
 
 Modal.Header = (props : CommonProps): ReactElement => {
-  return <Md.Header>{props.children}</Md.Header>
+  return <Md.Header className="px-6">{props.children}</Md.Header>
 }
 
 Modal.Body = (props: CommonProps): ReactElement => {
-  return <Md.Body>{props.children}</Md.Body>
+  return <Md.Body className="px-6">{props.children}</Md.Body>
 }
 
 Modal.Footer = (props: CommonProps): ReactElement => {
-  return <Md.Footer className="py-4">{props.children}</Md.Footer>
+  return <Md.Footer className="py-4 px-6">{props.children}</Md.Footer>
 }
 
 export default Modal

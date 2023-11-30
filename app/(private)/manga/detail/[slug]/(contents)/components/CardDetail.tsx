@@ -6,11 +6,15 @@ import { useState, type ReactElement } from 'react'
 import { motion } from 'framer-motion'
 import { FaPencilAlt } from 'react-icons/fa'
 import Modal from '@/components/Page/Modal'
+import MangaAddForm from '@/app/(private)/manga/add/form'
 
 export const CardDetail = (): ReactElement => {
-  const [openEdit, toggleEdit] = useState(false)
-  console.log('parent', openEdit);
-  
+  const [openEdit, toggleEdit] = useState(false)  
+  const handleSubmit = (data: any) => {
+    console.log(data);
+    
+  }
+
   return <>
     <Card className='lg:max-w-70 h-8/12'>
       <Card.RenderImage
@@ -63,11 +67,12 @@ export const CardDetail = (): ReactElement => {
         Edit %title% content info
       </Modal.Header>
       <Modal.Body>
-        %form%
+        <MangaAddForm 
+          submitData={handleSubmit}
+          rowOnly
+          isFormEdit
+        />
       </Modal.Body>
-      <Modal.Footer>
-        Please make sure your data is correct
-      </Modal.Footer>
     </Modal>
   </> 
   
