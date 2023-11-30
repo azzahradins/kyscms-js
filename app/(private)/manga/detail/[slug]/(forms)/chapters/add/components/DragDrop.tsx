@@ -34,7 +34,7 @@ export const DragDrop = ({ setFileList }: IDragDrop): React.ReactElement => {
         <div className='border p-4 border-dotted rounded-lg h-32 flex justify-center'>
         {isDragActive
           ? <span className='self-center'> Just drop it here </span>
-          : <span className='self-center'> Drop some file or click to open file explorer </span>
+          : <span className='self-center'> Drop or click to open file explorer </span>
         }
         </div>
       </div>

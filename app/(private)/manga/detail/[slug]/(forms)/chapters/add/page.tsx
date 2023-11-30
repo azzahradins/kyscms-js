@@ -44,7 +44,11 @@ export default function ChapterAdd({ params }: { params: { slug: string }, child
             fileList={fileList}
             setFileList={setFileList} />
         </div>
-        <div className='w-full relative flex flex-col-reverse md:flex-col gap-4'>
+        <div className='w-full relative flex flex-col-reverse md:flex-col gap-4 h-fit'>
+          <div className='lg:hidden inline-flex gap-2 justify-end'>
+            <Button text='Save Chapter as Draft' size='sm' style='pills' type='button' variant='gray' />
+            <Button text='Post Chapter' size='sm' style='pills' type='submit' />
+          </div>
           <Scheduler />
           <PreviewImage
             itemList={fileList} />
