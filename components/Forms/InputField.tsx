@@ -33,7 +33,8 @@ export const InputField: FC<IInputProps> =
     ) => {
       const { register, formState } = useFormContext()
 
-      const error = get(formState.errors, name)
+      const error = get(formState.errors)
+      console.log(error);
 
       return <div key={name} className={className} hidden={hidden}>
         <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{label}</label>

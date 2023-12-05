@@ -3,7 +3,7 @@ interface Props {
   text: string
   className?: string
   onClick?: (e: any) => void
-  variant?: 'gray' | 'primary' | 'warning' | 'danger' | 'disabled'
+  variant?: 'gray' | 'primary' | 'warning' | 'danger' | 'disabled' | 'success'
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
   style?: 'pills' | ''
 }

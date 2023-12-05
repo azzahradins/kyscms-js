@@ -30,9 +30,6 @@ function Sidebar (): React.ReactElement {
           <Sb.Items>
             <Sb.ItemGroup>
               <Sb.Item
-                className={classNames(
-                  { 'bg-gray-200': router[1] === 'dashboard' }
-                )}
                 href="/dashboard"
                 active={router[1] === 'dashboard'}
                 icon={FaHome}>
@@ -43,14 +40,13 @@ function Sidebar (): React.ReactElement {
                 label="Content"
                 open={router[1] === 'manga'}>
                 <Sb.Item
-                  className={classNames(
-                    { 'bg-gray-200': router[1] === 'manga' }
-                  )}
-                  active={router[1] === 'manga' ? true : undefined}
-                  href="/manga">
+                  active={(router[1] === 'manga' && router.length <= 2) && true }
+                  href="/manga">                    
                   Database
                 </Sb.Item>
-                <Sb.Item href="#">
+                <Sb.Item 
+                  active={router[2] === 'quickupload' ? true : undefined}
+                  href="/manga/quickupload">
                   Chapter Upload
                 </Sb.Item>
                 <Sb.Item href="#">

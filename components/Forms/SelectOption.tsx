@@ -2,7 +2,7 @@
 
 import { Label } from 'flowbite-react'
 import { forwardRef, type FC } from 'react'
-import { Controller, useFormContext } from 'react-hook-form'
+import { Controller, get, useFormContext } from 'react-hook-form'
 import { FaChevronDown, FaTimes } from 'react-icons/fa'
 import Select, { components, type ClearIndicatorProps, type DropdownIndicatorProps, type MultiValueRemoveProps } from 'react-select'
 import classNames from 'classnames'
@@ -77,9 +77,10 @@ export const SelectInput: FC<ISelectProps> = forwardRef<HTMLInputElement, ISelec
     isMulti = false,
     className,
     placeholder,
-    error
   }, ref) => {
-    const { control, formState: { errors } } = useFormContext()
+    const { control, formState } = useFormContext()
+
+    const error = get(formState.errors, name)
 
     return (
       <div className="w-full mb-4" id="select">
@@ -148,8 +149,9 @@ export const SelectInput: FC<ISelectProps> = forwardRef<HTMLInputElement, ISelec
                     optionStyles.base
                   ),
                 noOptionsMessage: () => noOptionsMessageStyles
-              }}/>
-          )}/>
+              }} />
+          )} />
+        <label className='text-sm text-danger'>{(Boolean(error)) && error.message}</label>
       </div>
     )
   }
