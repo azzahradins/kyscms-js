@@ -78,7 +78,7 @@ module.exports = {
       'card-Hover': '#EAEAEA',
       'cardD-Hover': '#333333',
       'sidebar-bg': '#D9D0E3',
-      'sidebarD-bg': '1C1C1C',
+      'sidebarD-bg': '#1C1C1C',
       'sidebar-hover': '#C4B5D6'
     },
     screens: {
