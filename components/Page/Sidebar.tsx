@@ -49,7 +49,9 @@ function Sidebar (): React.ReactElement {
                   href="/manga/quickupload">
                   Chapter Upload
                 </Sb.Item>
-                <Sb.Item href="#">
+                <Sb.Item 
+                  active={router[2] === 'external' ? true : undefined}
+                  href="#">
                   Mirror Source
                 </Sb.Item>
                 <Sb.Item href="#">
