@@ -236,6 +236,10 @@ span.flatpickr-weekday,
   @apply text-white bg-primary hover:bg-purple-600 focus:ring-4 focus:ring-primaryDk focus:outline-none dark:focus:ring-primaryDk;
 }
 
+.btn-prplAlt {
+  @apply text-prplprimary bg-prplaccent hover:bg-prplhover focus:outline-none focus:ring-4 focus:ring-prplaccent text-center dark:text-prplDPrimary dark:bg-prplDAccent dark:hover:bg-prplDhover dark:focus:ring-red-900
+}
+
 .btn-danger {
   @apply text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900
 }

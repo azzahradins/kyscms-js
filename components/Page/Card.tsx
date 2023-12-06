@@ -46,7 +46,7 @@ Card.Header = function CardHeader ({ children, ...props }: Props): React.ReactEl
   let component = children
   if (typeof children === 'string') {
     component = (
-    <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+    <h5 className="text-2xl font-bold tracking-tight text-secondary dark:text-white">
       { children }
     </h5>)
   }

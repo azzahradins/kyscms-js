@@ -7,17 +7,17 @@ import Link from 'next/link'
 export default function LandingPage (): JSX.Element {
   return (
     <div className="container">
-      <div className="grid lg:grid-cols-2 grid-cols-1">
+      <div className="grid lg:grid-cols-2 grid-cols-1 text-prplprimary dark:text-prplDPrimary" >
         <section className="flex flex-col gap-6 lg:gap-12 order-last lg:order-first">
           <h1 className='text-center lg:text-start'>
             Easy way to control content on your website
           </h1>
-          <h3 className='text-center lg:text-start'>
+          <h3 className='text-center lg:text-start text-secondaryprpl dark:text-prplDsecondary'>
             A improved tools that can help you stay organized and manage your tasks efficiently. Take control of your task and achieve your goals with our new interface.
           </h3>
           <div className='place-self-center lg:place-self-start'>
             <Link href={'/dashboard'}>
-              <Button text='Access Dashboard' type='button'/>
+              <Button variant='prplAlt' text='Access Dashboard' type='button'/>
             </Link>
           </div>
         </section>

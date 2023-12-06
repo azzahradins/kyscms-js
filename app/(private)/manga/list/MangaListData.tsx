@@ -16,7 +16,7 @@ const customButton: CustomFlowbiteTheme['button'] = {
 
 export default function MangaListData (): React.ReactElement {
   return (
-    <div className='flex flex-col gap-5'>
+    <div className='flex flex-col gap-5 text-dark-2'>
       <div className='flex flex-row justify-between'>
         <div className='flex flex-col w-full lg:w-fit lg:flex-row gap-2'>
           <Form methods={useForm()} onSubmit={useForm().handleSubmit((data, e) => { console.log(data) })}>

@@ -61,6 +61,16 @@ module.exports = {
       success: '#219653',
       danger: '#D34053',
       warning: '#FFA70B',
+      prplprimary: '#333333',
+      prplsecondary: '#333333',
+      prplaccent: '#9370DB',
+      prplhover: '#AB82FF',
+      prplBG: '#E6E6FA', 
+      prplDPrimary:'#CCCCCC',
+      prplDsecondary:'#999999',
+      prplDAccent: '#5E35B1',
+      prplDhover: '#673AB7',
+      prplDBG: '#121212'
     },
     screens: {
       '2xsm': '375px',
