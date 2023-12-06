@@ -19,7 +19,7 @@ function Card ({
 }: Props): React.ReactElement {
   return (
     <div className={`w-full dark:border-gray-700 border border-gray-200 dark:border-none rounded-lg shadow  ${className}`}>
-      <div className='bg-card-accent dark:bg-cardD-accent hover:bg-card-Hover hover:dark:bg-cardD-Hover'>
+      <div className='bg-light-3 dark:bg-dark-2'>
         { children }
       </div>
     </div>
