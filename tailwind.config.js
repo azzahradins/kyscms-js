@@ -62,7 +62,7 @@ module.exports = {
       danger: '#D34053',
       warning: '#FFA70B',
       prplprimary: '#333333',
-      prplsecondary: '#333333',
+      prplsecondary: '#666666',
       prplaccent: '#9370DB',
       prplhover: '#AB82FF',
       prplBG: '#E6E6FA', 
