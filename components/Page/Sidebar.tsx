@@ -7,7 +7,15 @@ import DarkModeSwitcher from '../Utilities/DarkModeSwitcher'
 
 const customSideBar: CustomFlowbiteTheme['sidebar'] = {
   root: {
-    inner: 'h-full overflow-y-auto overflow-x-hidden bg-light-1 py-4 px-3 dark:bg-gray-800 border-r border-light-2 dark:border-dark-2 justify-between flex flex-col'
+    inner: 'h-full overflow-y-auto text-prplDBG dark:text-prplBG overflow-x-hidden bg-sidebar-bg py-4 px-3 dark:bg-sidebarD-bg border-r border-sidebar-border justify-between flex flex-col'
+  },
+  collapse: {
+    button: 'group flex w-full items-center rounded-lg p-2 text-base font-normal text-red-900 transition duration-75 hover:bg-blue-100 dark:text-white dark:hover:bg-gray-700',
+    label: 'text-red-500'
+  },
+  item: {
+    active: 'bg-gray-100 dark:bg-gray-700',
+    base: 'mt-4 space-y-2 border-t border-gray-200 pt-4 first:mt-0 first:border-t-0 first:pt-0 dark:border-red-700'
   }
 }
 

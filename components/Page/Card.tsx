@@ -19,7 +19,7 @@ function Card ({
 }: Props): React.ReactElement {
   return (
     <div className={`w-full dark:border-gray-700 border border-gray-200 dark:border-none rounded-lg shadow  ${className}`}>
-      <div className='bg-light-3 dark:bg-dark-2'>
+      <div className='bg-card-accent dark:bg-cardD-accent hover:bg-card-Hover hover:dark:bg-cardD-Hover'>
         { children }
       </div>
     </div>
@@ -46,7 +46,7 @@ Card.Header = function CardHeader ({ children, ...props }: Props): React.ReactEl
   let component = children
   if (typeof children === 'string') {
     component = (
-    <h5 className="text-2xl font-bold tracking-tight text-secondary dark:text-white">
+    <h5 className="text-2xl font-bold tracking-tight text-prplprimary dark:text-prplDPrimary">
       { children }
     </h5>)
   }
@@ -59,7 +59,7 @@ Card.Header = function CardHeader ({ children, ...props }: Props): React.ReactEl
 
 Card.Body = function CardBody ({ children, ...props }: Props): React.ReactElement {
   return (
-    <div className="flow-root font-normal text-gray-700 dark:text-gray-400 px-6 pb-6">
+    <div className="flow-root font-normal text-card-content dark:text-cardD-content px-6 pb-6">
       { children }
     </div>
   )

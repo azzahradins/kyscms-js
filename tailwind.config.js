@@ -70,7 +70,16 @@ module.exports = {
       prplDsecondary:'#999999',
       prplDAccent: '#5E35B1',
       prplDhover: '#673AB7',
-      prplDBG: '#121212'
+      prplDBG: '#121212',
+      'card-accent': '#F5F5F5',
+      'card-content': '#555555',
+      'cardD-accent': '#1C1C1C',
+      'cardD-content': '#999999',
+      'card-Hover': '#EAEAEA',
+      'cardD-Hover': '#333333',
+      'sidebar-bg': '#D9D0E3',
+      'sidebarD-bg': '1C1C1C',
+      'sidebar-hover': '#C4B5D6'
     },
     screens: {
       '2xsm': '375px',
