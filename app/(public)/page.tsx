@@ -12,7 +12,7 @@ export default function LandingPage (): JSX.Element {
           <h1 className='text-center lg:text-start'>
             Easy way to control content on your website
           </h1>
-          <h3 className='text-center lg:text-start text-secondaryprpl dark:text-prplDsecondary'>
+          <h3 className='text-center lg:text-start text-prplsecondary dark:text-prplDsecondary'>
             A improved tools that can help you stay organized and manage your tasks efficiently. Take control of your task and achieve your goals with our new interface.
           </h3>
           <div className='place-self-center lg:place-self-start'>
