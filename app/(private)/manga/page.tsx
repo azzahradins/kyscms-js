@@ -15,7 +15,7 @@ const customTheme: CustomFlowbiteTheme['tabs'] = {
       styles: {
         default: {
           active: {
-            on: 'bg-gray text-cyan-600 dark:bg-gray-800 dark:text-cyan-500'
+            on: 'bg-gray text-red-500 dark:bg-gray-800 dark:text-cyan-500'
           }
         }
       }

@@ -79,7 +79,9 @@ module.exports = {
       'cardD-Hover': '#333333',
       'sidebar-bg': '#D9D0E3',
       'sidebarD-bg': '#1C1C1C',
-      'sidebar-hover': '#C4B5D6'
+      'sidebar-hover': '#C4B5D6',
+      'sidebar-ON': '#8E44AD',
+      'sidebarD-ON': '#483D8B'
     },
     screens: {
       '2xsm': '375px',

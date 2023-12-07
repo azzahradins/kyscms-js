@@ -12,7 +12,7 @@ export default function LandingPage (): JSX.Element {
           <h1 className='text-center lg:text-start'>
             Easy way to control content on your website
           </h1>
-          <h3 className='text-center lg:text-start'>
+          <h3 className='text-center lg:text-start text-prplsecondary dark:text-prplDsecondary'>
             A improved tools that can help you stay organized and manage your tasks efficiently. Take control of your task and achieve your goals with our new interface.
           </h3>
           <div className='place-self-center lg:place-self-start'>
@@ -23,14 +23,14 @@ export default function LandingPage (): JSX.Element {
         </section>
         <section className='relative order-first lg:order-last'>
           <motion.img
-            className='opacity-30 -z-50 top-8 relative w-1/3'
+            className='opacity-30 top-8 relative w-1/3'
             src='pattern-plus.svg'
             animate={{
               x: [10, -15, 10],
               transition: { repeat: Infinity, repeatDelay: 1.5, duration: 6 }
             }}/>
           <motion.img
-            className='opacity-30 -z-50 -top-12 relative float-right w-1/3'
+            className='opacity-30 -top-12 relative float-right w-1/3'
             src='pattern-triangle.svg'
             animate={{
               x: [-15, 10, -15],
