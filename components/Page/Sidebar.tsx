@@ -68,8 +68,9 @@ function Sidebar (): React.ReactElement {
                 Storage Server
               </Sb.Item>
               <Sb.Item
-                href="#"
-                icon={FaUser}>
+                href="/access"
+                icon={FaUser}
+                active={router[1] === 'access' ? true : undefined}>
                 User Management
               </Sb.Item>
               <Sb.Item
