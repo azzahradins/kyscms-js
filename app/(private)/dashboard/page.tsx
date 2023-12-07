@@ -45,10 +45,10 @@ export default function Dashboard (): JSX.Element {
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-3'>
         <Card>
           <Card.Header>
-            <h3 className="text-2xl font-bold leading-none">
+            <h3 className="text-2xl font-bold leading-none text-card-content dark:text-cardD-content">
               Latest Upload
             </h3>
-            <a className="text-sm font-medium text-cyan-600 hover:underline dark:text-cyan-500"
+            <a className="text-sm font-medium text-sidebar-ON hover:underline dark:text-sidebarD-ON"
               href="#"> View all </a>
           </Card.Header>
           <Card.Body>

@@ -18,8 +18,8 @@ function Card ({
   className = ''
 }: Props): React.ReactElement {
   return (
-    <div className={`w-full dark:border-gray-700 border border-gray-200 dark:border-none rounded-lg shadow  ${className}`}>
-      <div className='bg-card-accent dark:bg-cardD-accent'>
+    <div className='w-full dark:border-gray-700 border border-gray-200 dark:border-none rounded-lg'>
+      <div className={`bg-card-accent dark:bg-cardD-accent hover:bg-card-Hover hover:dark:bg-cardD-Hover shadow ${className}`}>
         { children }
       </div>
     </div>
@@ -46,7 +46,7 @@ Card.Header = function CardHeader ({ children, ...props }: Props): React.ReactEl
   let component = children
   if (typeof children === 'string') {
     component = (
-    <h5 className="text-2xl font-bold tracking-tight text-card-content dark:text-cardD-content">
+    <h5 className="text-2xl font-bold tracking-tight text-card-content dark:text-cardD-content hover:bg-link-hover dark:hover:bg-linkD-hover">
       { children }
     </h5>)
   }

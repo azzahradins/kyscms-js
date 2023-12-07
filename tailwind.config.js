@@ -80,8 +80,10 @@ module.exports = {
       'sidebar-bg': '#D9D0E3',
       'sidebarD-bg': '#1C1C1C',
       'sidebar-hover': '#C4B5D6',
-      'sidebar-ON': '#8E44AD',
-      'sidebarD-ON': '#483D8B'
+      'sidebar-ON': '#D3BDE6',
+      'sidebarD-ON': '#483D8B',
+      'link-hover': '#AF7AC5',
+      'linkD-hover': '#2C3E50'
     },
     screens: {
       '2xsm': '375px',
