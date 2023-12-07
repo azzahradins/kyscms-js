@@ -4,7 +4,7 @@ import { get, useFormContext } from 'react-hook-form'
 
 interface IInputProps {
   name: string
-  label: string
+  label?: string
   type?: 'text' | 'number' | 'email' | 'password'
   size?: 'medium' | 'large'
   className?: string
@@ -60,7 +60,7 @@ export const InputFieldFb: FC<IInputProps> =
         label,
         type = 'text',
         size = 'medium',
-        className = '',
+        className = 'w-full mb-4',
         placeholder,
         maxLength = 120,
         minLength = 0,
@@ -71,7 +71,7 @@ export const InputFieldFb: FC<IInputProps> =
 
       const error = get(formState.errors, name)
 
-      return <div className="w-full mb-4">
+      return <div className={`${className}`}>
         <div className="mb-2 block">
           <Label
             htmlFor={name}
