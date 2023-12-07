@@ -248,6 +248,10 @@ span.flatpickr-weekday,
   @apply dark:text-white border border-gray-400 dark:border-gray-600 focus:outline-none focus:ring-4 focus:ring-gray-200 text-center dark:focus:ring-dark-2
 }
 
+.btn-prplAlt {
+  @apply text-prplprimary bg-prplaccent hover:bg-prplhover focus:outline-none focus:ring-4 focus:ring-prplaccent text-center dark:text-prplDPrimary dark:bg-prplDAccent dark:hover:bg-prplDhover dark:focus:ring-prplprimary
+}
+
 .inputField {
   @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:border-blue-500 block w-full p-2.5; 
   @apply dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500
