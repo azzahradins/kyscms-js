@@ -33,20 +33,20 @@ export default function MangaQuickUploadForm(): React.ReactElement {
   }
 
   return (
-    <Form methods={formMethod} className={`gap-x-4 gap-y-3`}>
+    <Form methods={formMethod} className={'gap-x-4 gap-y-3'}>
       <SelectInput
         name='content'
         label='Choose Content Title'
         options={[{ value: 'on-going', label: 'On Going' }, { value: 'published', label: 'Published' }, { value: 'draft', label: 'Draft' }, { value: 'completed', label: 'Completed' }]} />
       <Button
         text='Content Detail Page'
-        size='sm' type='submit' 
-        onClick={formMethod.handleSubmit(submitDetailPage)} 
+        size='sm' type='submit'
+        onClick={formMethod.handleSubmit(submitDetailPage)}
         className="mr-2" />
-      <Button 
-        text='Add New Chapter' 
-        size='sm' 
-        type='submit' 
+      <Button
+        text='Add New Chapter'
+        size='sm'
+        type='submit'
         onClick={formMethod.handleSubmit(submitNewChapter)}
         variant="success" />
     </Form>

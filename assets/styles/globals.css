@@ -249,7 +249,7 @@ span.flatpickr-weekday,
 }
 
 .btn-prplAlt {
-  @apply text-prplprimary bg-prplaccent hover:bg-prplhover focus:outline-none focus:ring-4 focus:ring-prplaccent text-center dark:text-prplDPrimary dark:bg-prplDAccent dark:hover:bg-prplDhover dark:focus:ring-prplprimary
+  @apply text-prplprimary bg-prplaccent hover:bg-prplhover focus:outline-none focus:ring-4 focus:ring-prplaccent text-center dark:text-prplDPrimary dark:bg-prplDAccent dark:hover:bg-prplDhover dark:focus:ring-prplprimary transition-all duration-300
 }
 
 .inputField {

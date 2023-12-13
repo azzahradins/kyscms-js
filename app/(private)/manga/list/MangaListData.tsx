@@ -23,14 +23,15 @@ export default function MangaListData (): React.ReactElement {
             <InputIcon
               name='search'
               icon={FaSearchengin}
-              placeholder='Search Keyword'/>
+              placeholder='Search Keyword'
+              className='bg-card-accent dark:bg-cardD-accent hover:bg-card-Hover hover:dark:bg-cardD-Hover border-none'/>
           </Form>
-          <Button size="md" color="gray" className="text-bodydark3">
+          <Button size="md" color='light'>
             <FaFilter className="mr-2 h-4 w-4 self-center"/> Add Filters
           </Button>
         </div>
         <Link href={'/manga/add'} className='hidden lg:block'>
-          <Button size="md" color="success" theme={customButton}>
+          <Button size="md" color='success' theme={customButton}>
             <FaPlus className="mr-2 h-4 w-4 self-center"/> Create New Collection
           </Button>
         </Link>

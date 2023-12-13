@@ -34,9 +34,9 @@
       "line": {
         "tension": 0,
         "borderWidth": 2,
-        "borderColor": "rgba(47,97,68, 1)",
+        "borderColor": "rgba(51,51,51, 1)",
         "fill": "start",
-        "backgroundColor": "rgba(47,97,68, 0.3)"
+        "backgroundColor": "rgba(128,128,128, 0.3)"
       },
       "point": {
         "radius": 0,

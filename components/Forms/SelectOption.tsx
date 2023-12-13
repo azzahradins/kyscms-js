@@ -63,9 +63,9 @@ const dropdownIndicatorStyles =
 const menuStyles = 'p-1 mt-1 rounded-lg border border-cyan-500 ring-cyan-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-cyan-500 dark:focus:ring-cyan-500'
 const groupHeadingStyles = 'ml-3 mt-2 mb-1 text-gray-500 text-sm'
 const optionStyles = {
-  base: 'hover:cursor-pointer px-3 py-2',
-  focus: 'bg-gray-600 active:bg-gray-700',
-  selected: 'after:ml-2 text-gray-500 dark:text-white bg-primary'
+  base: 'hover:cursor-pointer px-3 py-2 bg-Dropdown-BG dark:bg-sidebarD-bg text-prplprimary dark:text-prplDPrimary',
+  focus: 'bg-link-hover dark:bg-DropdownH dark:bg-Dropdown-BG dark:text-prplprimary active:bg-gray-700',
+  selected: 'after:ml-2 text-red-500 bg:text-prplDAccent bg-primary'
 }
 const noOptionsMessageStyles = `p-2 border border-dashed border-gray-200 rounded-sm ${defaultGray}`
 

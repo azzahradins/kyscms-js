@@ -83,7 +83,10 @@ module.exports = {
       'sidebar-ON': '#D3BDE6',
       'sidebarD-ON': '#483D8B',
       'link-hover': '#AF7AC5',
-      'linkD-hover': '#2C3E50'
+      'linkD-hover': '#2C3E50',
+      'Dropdown-BG': '#D9D0E3',
+      'DropdownH': '#2C3E50'
+
     },
     screens: {
       '2xsm': '375px',

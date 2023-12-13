@@ -15,7 +15,7 @@ const customTheme: CustomFlowbiteTheme['tabs'] = {
       styles: {
         default: {
           active: {
-            on: 'bg-gray text-red-500 dark:bg-gray-800 dark:text-cyan-500'
+            on: 'bg-gray text-blue-500 dark:bg-gray-800 dark:text-cyan-500'
           }
         }
       }
@@ -26,7 +26,7 @@ const customTheme: CustomFlowbiteTheme['tabs'] = {
 export default function MangaList (): React.ReactElement {
   return (
     <main>
-      <Title value='Content Database' className='mx-5 mt-4'/>
+      <Title value='CONTENT DATABASE' className='mx-5 mt-4'/>
       <Tabs
         theme={customTheme}
         aria-label=" Tabs"
