@@ -1,31 +1,48 @@
 'use client'
 
-import { Button, Form, InputFieldFb as InputField } from '@/components/Forms'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
-import { z } from 'zod'
+import { useState } from 'react'
+import { useForm, FormProvider } from 'react-hook-form';
+import SearchContentExternalForm from './SearchContent'
+import { zodResolver } from '@hookform/resolvers/zod';
+import { searchContentValidation } from '@/validations/external/SearchContentValidation';
 
-const validationSchema = z.object({
-  url: z.string().min(3, 'Url or title minimal 3 characters')
-})
+interface Props {
+  children: React.ReactNode,
+  step: number
+  className?: string
+}
 
-type MangaExternalFormSchema = z.infer<typeof validationSchema>
+interface elementConfig {
+  lastStep: number,
+  element: React.ReactNode[]
+}
 
-export default function MangaExternalForm (): React.ReactElement {
-  const formMethod = useForm<MangaExternalFormSchema>({
-    resolver: zodResolver(validationSchema)
+export default function MangaExternalForm(): React.ReactElement {
+  const [stepConfig, setStepConfiguration] = useState<elementConfig>({
+    lastStep: 1,
+    element: [null]
+  })
+  
+  const methods = useForm({
+    shouldUnregister: false,
+    resolver: zodResolver(searchContentValidation)
   })
 
   return (
-    <Form methods={formMethod} className='bg-dark-2 p-4 flex flex-col rounded-md rounded-b-none shadow-md'>
-      <small>Step 1</small>
-      <h3 className='font-semibold'>Search Content</h3>
-      <span> You can search content using keywords OR link to content available.</span>
-      <InputField
-        name='url'
-        placeholder='Url / Title'
-        className='mb-2'/>
-      <Button type='submit' text='Submit' className='mb-2 w-fit self-end'/>
-    </Form>
+    <FormProvider {...methods}>
+      <MangaExternalForm.form step={1}>
+        <SearchContentExternalForm stepConfiguration={stepConfig} setStepConfiguration={setStepConfiguration} />
+      </MangaExternalForm.form>
+      {stepConfig.element}
+    </FormProvider>
+  )
+}
+
+MangaExternalForm.form = function FormWrapper({ children, className, step }: Props): React.ReactElement {
+  return (
+    <div className={`px-4 py-2 flex flex-col ${className} border-b border-dark-3 bottom-10 shadow-lg`}>
+      <small>Step {step}</small>
+      {children}
+    </div>
   )
 }

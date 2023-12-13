@@ -25,7 +25,8 @@ module.exports = {
       },
       dark: {
         1: '#20262E',
-        2: '#262e38'
+        2: '#262e38',
+        3: '#262a38'
       },
       primary: '#7e57c2',
       primaryDk: '#64459b',
