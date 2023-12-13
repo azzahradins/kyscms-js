@@ -85,7 +85,8 @@ module.exports = {
       'link-hover': '#AF7AC5',
       'linkD-hover': '#2C3E50',
       'Dropdown-BG': '#D9D0E3',
-      'DropdownH': '#2C3E50'
+      'DropdownH': '#2C3E50',
+      'DropdownBodyH': '#F2EBF5'
 
     },
     screens: {
