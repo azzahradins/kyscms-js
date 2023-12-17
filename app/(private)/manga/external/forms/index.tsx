@@ -30,10 +30,12 @@ export default function MangaExternalForm(): React.ReactElement {
 
   return (
     <FormProvider {...methods}>
-      <MangaExternalForm.form step={1}>
-        <SearchContentExternalForm stepConfiguration={stepConfig} setStepConfiguration={setStepConfiguration} />
-      </MangaExternalForm.form>
-      {stepConfig.element}
+      <div className='bg-dark-2 rounded-lg'>
+        <MangaExternalForm.form step={1}>
+          <SearchContentExternalForm stepConfiguration={stepConfig} setStepConfiguration={setStepConfiguration} />
+        </MangaExternalForm.form>
+        {stepConfig.element}
+      </div>
     </FormProvider>
   )
 }
