@@ -9,7 +9,7 @@ import classNames from 'classnames'
 
 interface ISelectProps {
   name: string
-  label: string
+  label?: string
   options: Array<{ value: string, label: string }>
   isMulti?: boolean
   className?: string
@@ -72,7 +72,7 @@ const noOptionsMessageStyles = `p-2 border border-dashed border-gray-200 rounded
 export const SelectInput: FC<ISelectProps> = forwardRef<HTMLInputElement, ISelectProps>(
   ({
     name,
-    label,
+    label='',
     options,
     isMulti = false,
     className,

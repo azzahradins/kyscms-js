@@ -24,7 +24,8 @@
       "@/*": ["./*"],
       "@/app/*": ["./app/*"],
       "@/component/*": ["./components/*"],
-      "@/hook/*": ["./hooks/*"]
+      "@/hook/*": ["./hooks/*"],
+      "@/validation/*": ["./validations/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

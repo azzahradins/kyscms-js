@@ -29,3 +29,15 @@ export const formatHours = (value: string) => {
     parseInt(`0${value}`) : 
     parseInt(value)
 }
+
+export const isValidHttpUrl = (string: string) => {
+  let url;
+  
+  try {
+    url = new URL(string);
+  } catch (_) {
+    return false;  
+  }
+
+  return url.protocol === "http:" || url.protocol === "https:";
+}
