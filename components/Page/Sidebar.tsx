@@ -58,7 +58,9 @@ function Sidebar (): React.ReactElement {
                   href="/manga/external">
                   Mirror Source
                 </Sb.Item>
-                <Sb.Item href="#">
+                <Sb.Item 
+                  active={router[2] === 'setting' ? true : undefined}
+                  href="/manga/setting">
                   Setting Content Data
                 </Sb.Item>
               </Sb.Collapse>

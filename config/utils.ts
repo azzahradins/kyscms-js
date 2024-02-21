@@ -41,3 +41,16 @@ export const isValidHttpUrl = (string: string) => {
 
   return url.protocol === "http:" || url.protocol === "https:";
 }
+
+function checkDuplicateKey(objects: any[], key: string): boolean {
+  let count = 0;
+  for (const obj of objects) {
+    if (obj[key] === true) {
+      count++;
+      if (count > 1) {
+        return false; // More than one object with true keyfield
+      }
+    }
+  }
+  return count === 1; // Exactly one object has true keyfield
+}
